@@ -57,7 +57,7 @@ app.use((err, req, res, _next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`PMHNP Prep API running on port ${PORT} (${isProduction ? 'production' : 'development'})`);
 });
 
