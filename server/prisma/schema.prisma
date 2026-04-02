@@ -1,0 +1,187 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String       @id @default(uuid())
+  email         String       @unique
+  passwordHash  String
+  name          String
+  role          String       @default("student") // student | admin
+  tier          String       @default("free")    // free | premium
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  quizAttempts  QuizAttempt[]
+  bookmarks     Bookmark[]
+  notes         Note[]
+  progress      UserProgress[]
+  studyPlans    StudyPlan[]
+}
+
+model Question {
+  id                     String   @id @default(uuid())
+  stem                   String
+  optionA                String
+  optionB                String
+  optionC                String
+  optionD                String
+  correctAnswer          String   // A, B, C, D
+  rationale              String
+  explanationA           String   @default("")
+  explanationB           String   @default("")
+  explanationC           String   @default("")
+  explanationD           String   @default("")
+  examTip                String   @default("")
+  category               String   // Pathophysiology, Pharmacology, Physical Assessment
+  subtopic               String
+  difficulty             String   // easy, medium, hard
+  bennerStage            String   // novice, advanced_beginner, competent, proficient, expert
+  clinicalReasoningObj   String   @default("")
+  questionType           String   @default("standard") // standard | advanced
+  clinicalTopic          String   @default("")
+  pharmacologyFocus      String   @default("")
+  bennerBreakdown        String   @default("")
+  isActive               Boolean  @default(true)
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  quizQuestions QuizQuestion[]
+  quizAnswers   QuizAnswer[]
+  bookmarks     Bookmark[]
+  notes         Note[]
+}
+
+model Quiz {
+  id          String        @id @default(uuid())
+  title       String
+  mode        String        // practice, timed, exam
+  timeLimit   Int?          // in seconds, null = untimed
+  questionCount Int
+  category    String?       // null = all categories
+  bennerStage String?       // null = all stages
+  createdAt   DateTime      @default(now())
+
+  questions   QuizQuestion[]
+  attempts    QuizAttempt[]
+}
+
+model QuizQuestion {
+  id         String   @id @default(uuid())
+  quizId     String
+  questionId String
+  sortOrder  Int
+
+  quiz       Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([quizId, questionId])
+}
+
+model QuizAttempt {
+  id            String   @id @default(uuid())
+  userId        String
+  quizId        String
+  score         Int      @default(0)
+  totalQuestions Int
+  timeSpent     Int      @default(0) // seconds
+  completed     Boolean  @default(false)
+  startedAt     DateTime @default(now())
+  completedAt   DateTime?
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz      Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers   QuizAnswer[]
+}
+
+model QuizAnswer {
+  id            String   @id @default(uuid())
+  attemptId     String
+  questionId    String
+  selectedAnswer String  // A, B, C, D
+  isCorrect     Boolean
+  timeSpent     Int      @default(0)
+  flagged       Boolean  @default(false)
+
+  attempt  QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionId])
+}
+
+model Bookmark {
+  id         String   @id @default(uuid())
+  userId     String
+  questionId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+}
+
+model Note {
+  id         String   @id @default(uuid())
+  userId     String
+  questionId String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+}
+
+model UserProgress {
+  id          String @id @default(uuid())
+  userId      String
+  category    String
+  bennerStage String
+  totalAnswered Int  @default(0)
+  totalCorrect  Int  @default(0)
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, category, bennerStage])
+}
+
+model StudyPlan {
+  id            String   @id @default(uuid())
+  userId        String
+  name          String
+  timeline      String   // 2_week, 4_week, 8_week, 12_week
+  startDate     DateTime
+  endDate       DateTime
+  dailyGoal     Int      @default(25) // questions per day
+  focusTopics   String   @default("") // comma-separated clinical topics
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyLogs     StudyLog[]
+}
+
+model StudyLog {
+  id            String   @id @default(uuid())
+  studyPlanId   String
+  date          DateTime
+  questionsCompleted Int @default(0)
+  questionsCorrect   Int @default(0)
+  timeSpent     Int      @default(0) // seconds
+  topicsCovered String   @default("") // comma-separated
+  createdAt     DateTime @default(now())
+
+  studyPlan     StudyPlan @relation(fields: [studyPlanId], references: [id], onDelete: Cascade)
+
+  @@unique([studyPlanId, date])
+}
