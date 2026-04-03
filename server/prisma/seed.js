@@ -1242,11 +1242,19 @@ async function main() {
   });
   console.log(`Created student: ${student.email}`);
 
-  // Seed questions
+  // Seed questions (skip duplicates)
+  let seeded = 0;
+  let skipped = 0;
   for (const q of questions) {
-    await prisma.question.create({ data: q });
+    try {
+      await prisma.question.create({ data: q });
+      seeded++;
+    } catch (e) {
+      // Skip if question already exists (unique constraint)
+      skipped++;
+    }
   }
-  console.log(`Seeded ${questions.length} questions`);
+  console.log(`Seeded ${seeded} questions (${skipped} already existed)`);
 
   // Create sample progress for demo student
   const stages = ['novice', 'advanced_beginner', 'competent', 'proficient', 'expert'];
