@@ -199,14 +199,31 @@ export default function QuestionBank() {
                     </div>
                   )}
                   {q.pharmacologyFocus && (
-                    <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl">
-                      <h4 className="font-bold text-emerald-700 dark:text-emerald-300 mb-1">💊 Pharmacology Focus</h4>
-                      <div className="flex flex-wrap gap-1.5 mt-1">
-                        {q.pharmacologyFocus.split(',').map((tag, i) => (
-                          <span key={i} className="inline-block px-2 py-0.5 bg-emerald-100 dark:bg-emerald-800/40 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-medium">
-                            {tag.trim().replace(/_/g, ' ')}
-                          </span>
-                        ))}
+                    <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl border-2 border-emerald-200 dark:border-emerald-800">
+                      {q.pharmacologyFocus.includes('moa') && (
+                        <div className="mb-3 p-3 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40 rounded-lg border-l-4 border-blue-500">
+                          <h5 className="font-bold text-blue-700 dark:text-blue-300 mb-1">⚗️ KEY MOA FOCUS</h5>
+                          <p className="text-xs text-blue-800 dark:text-blue-200 leading-relaxed italic">This question emphasizes medication mechanism of action</p>
+                        </div>
+                      )}
+                      <h4 className="font-bold text-emerald-700 dark:text-emerald-300 mb-2">💊 Pharmacology Focus</h4>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {q.pharmacologyFocus.split(',').map((tag, i) => {
+                          const cleanTag = tag.trim().replace(/_/g, ' ');
+                          const isMOA = tag.trim() === 'moa';
+                          return (
+                            <span 
+                              key={i} 
+                              className={`inline-block px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                                isMOA 
+                                  ? 'bg-gradient-to-r from-blue-400 to-cyan-400 text-white shadow-lg' 
+                                  : 'bg-emerald-100 dark:bg-emerald-800/40 text-emerald-700 dark:text-emerald-300'
+                              }`}
+                            >
+                              {isMOA ? '⚡ ' : ''}{cleanTag.toUpperCase()}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   )}

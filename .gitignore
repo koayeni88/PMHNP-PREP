@@ -24,6 +24,10 @@ client/dist/
 .DS_Store
 Thumbs.db
 
+# Vite cache
+.vite/
+
 # Logs
+logs/
 *.log
 npm-debug.log*

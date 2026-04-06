@@ -9,6 +9,7 @@ import { antimicrobialCellWallQuestions } from './questions/antimicrobial_cell_w
 import { antidepressantMoaQuestions } from './questions/antidepressants_moa.js';
 import { anxiolyticAntipsychoticQuestions } from './questions/anxiolytics_antipsychotics.js';
 import { additionalFnpPaQuestions } from './questions/additional_fnp_pa.js';
+import { generatedBookSystemQuestions } from './questions/generated_book_system_questions.js';
 
 const prisma = new PrismaClient();
 
@@ -1196,7 +1197,7 @@ const coreQuestions = [
   }
 ];
 
-const questions = [
+const allQuestions = [
   ...coreQuestions,
   ...neuroPnsCnsQuestions,
   ...cardiovascularQuestions,
@@ -1207,7 +1208,17 @@ const questions = [
   ...antidepressantMoaQuestions,
   ...anxiolyticAntipsychoticQuestions,
   ...additionalFnpPaQuestions,
+  ...generatedBookSystemQuestions,
 ];
+
+// Deduplicate by stem (keep first occurrence)
+const seen = new Set();
+const questions = allQuestions.filter(q => {
+  if (seen.has(q.stem)) return false;
+  seen.add(q.stem);
+  return true;
+});
+console.log(`${allQuestions.length} total → ${questions.length} unique (${allQuestions.length - questions.length} duplicates removed)`);
 
 async function main() {
   console.log('Seeding database...');
@@ -1242,19 +1253,20 @@ async function main() {
   });
   console.log(`Created student: ${student.email}`);
 
-  // Seed questions (skip duplicates)
+  // Seed questions (clear existing, then insert fresh)
+  await prisma.quizAnswer.deleteMany();
+  await prisma.quizQuestion.deleteMany();
+  await prisma.bookmark.deleteMany();
+  await prisma.note.deleteMany();
+  await prisma.question.deleteMany();
+  console.log('Cleared existing questions');
+
   let seeded = 0;
-  let skipped = 0;
   for (const q of questions) {
-    try {
-      await prisma.question.create({ data: q });
-      seeded++;
-    } catch (e) {
-      // Skip if question already exists (unique constraint)
-      skipped++;
-    }
+    await prisma.question.create({ data: q });
+    seeded++;
   }
-  console.log(`Seeded ${seeded} questions (${skipped} already existed)`);
+  console.log(`Seeded ${seeded} questions`);
 
   // Create sample progress for demo student
   const stages = ['novice', 'advanced_beginner', 'competent', 'proficient', 'expert'];

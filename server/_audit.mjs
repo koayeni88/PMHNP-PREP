@@ -1,0 +1,11 @@
+import prisma from './src/utils/prisma.js';
+const byTopic = await prisma.question.groupBy({ by: ['clinicalTopic'], _count: true, orderBy: { _count: { clinicalTopic: 'desc' } } });
+const byCat = await prisma.question.groupBy({ by: ['category'], _count: true, orderBy: { _count: { category: 'desc' } } });
+const byDiff = await prisma.question.groupBy({ by: ['difficulty'], _count: true });
+const byStage = await prisma.question.groupBy({ by: ['bennerStage'], _count: true });
+console.log('BY TOPIC:'); byTopic.forEach(r => console.log(`  ${r.clinicalTopic || '(none)'}: ${r._count}`));
+console.log('\nBY CATEGORY:'); byCat.forEach(r => console.log(`  ${r.category}: ${r._count}`));
+console.log('\nBY DIFFICULTY:'); byDiff.forEach(r => console.log(`  ${r.difficulty}: ${r._count}`));
+console.log('\nBY STAGE:'); byStage.forEach(r => console.log(`  ${r.bennerStage}: ${r._count}`));
+console.log('\nTOTAL:', await prisma.question.count());
+await prisma.$disconnect();

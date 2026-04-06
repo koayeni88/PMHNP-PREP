@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../utils/api.js';
 import { BENNER_STAGES, CATEGORIES, QUESTION_TYPES, CLINICAL_TOPICS, BODY_SYSTEMS, getBennerLabel } from '../utils/constants.js';
@@ -12,27 +12,61 @@ export default function QuizBuilder() {
   const [category, setCategory] = useState('');
   const [bennerStage, setBennerStage] = useState('');
   const [questionType, setQuestionType] = useState('');
-  const [clinicalTopic, setClinicalTopic] = useState('');
-  const [bodySystem, setBodySystem] = useState('');
+  const [selectedBodySystems, setSelectedBodySystems] = useState([]);
+  const [selectedClinicalTopics, setSelectedClinicalTopics] = useState([]);
   const [questionCount, setQuestionCount] = useState(isExam ? 150 : 20);
   const [timed, setTimed] = useState(isExam);
   const [timeLimit, setTimeLimit] = useState(isExam ? 210 : 30); // minutes
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Topics implied by selected body systems
+  const bodySystemTopics = useMemo(() => {
+    const topics = new Set();
+    selectedBodySystems.forEach(sysKey => {
+      const sys = BODY_SYSTEMS.find(s => s.key === sysKey);
+      if (sys) sys.clinicalTopics.forEach(t => topics.add(t));
+    });
+    return topics;
+  }, [selectedBodySystems]);
+
+  // Combined: body-system-implied topics + individually selected topics
+  const allSelectedTopics = useMemo(() => {
+    const combined = new Set(bodySystemTopics);
+    selectedClinicalTopics.forEach(t => combined.add(t));
+    return combined;
+  }, [bodySystemTopics, selectedClinicalTopics]);
+
+  const toggleBodySystem = (key) => {
+    setSelectedBodySystems(prev =>
+      prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
+    );
+  };
+
+  const toggleClinicalTopic = (key) => {
+    // If topic is implied by a body system, toggling removes the whole system instead
+    if (bodySystemTopics.has(key) && !selectedClinicalTopics.includes(key)) return;
+    setSelectedClinicalTopics(prev =>
+      prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
+    );
+  };
+
+  const clearAllSelections = () => {
+    setSelectedBodySystems([]);
+    setSelectedClinicalTopics([]);
+  };
+
   const handleStart = async () => {
     setLoading(true);
     setError('');
     try {
-      const resolvedClinicalTopic = bodySystem
-        ? BODY_SYSTEMS.find(s => s.key === bodySystem)?.clinicalTopics.join(',')
-        : clinicalTopic || undefined;
+      const topicsList = [...allSelectedTopics];
       const data = await api.createQuiz({
         mode,
         category: category || undefined,
         bennerStage: bennerStage || undefined,
         questionType: questionType || undefined,
-        clinicalTopic: resolvedClinicalTopic,
+        clinicalTopic: topicsList.length > 0 ? topicsList.join(',') : undefined,
         questionCount: parseInt(questionCount),
         timeLimit: timed ? timeLimit * 60 : undefined
       });
@@ -104,23 +138,72 @@ export default function QuizBuilder() {
               </div>
             </div>
 
-            {/* Body System */}
+            {/* Body System — multi-select */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Body System</label>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <button onClick={() => { setBodySystem(''); setClinicalTopic(''); }}
-                  className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
-                    !bodySystem ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
-                  All Systems
-                </button>
-                {BODY_SYSTEMS.map((s) => (
-                  <button key={s.key} onClick={() => { setBodySystem(s.key); setClinicalTopic(''); }}
-                    className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
-                      bodySystem === s.key ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
-                    {s.icon} {s.label}
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Body Systems</label>
+                {selectedBodySystems.length > 0 && (
+                  <button onClick={clearAllSelections} className="text-xs text-primary-600 hover:text-primary-700 font-medium">
+                    Clear All
                   </button>
-                ))}
+                )}
               </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {BODY_SYSTEMS.map((s) => {
+                  const isSelected = selectedBodySystems.includes(s.key);
+                  return (
+                    <button key={s.key} onClick={() => toggleBodySystem(s.key)}
+                      className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
+                        isSelected
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 ring-1 ring-primary-300'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'}`}>
+                      <span>{s.icon} {s.label}</span>
+                      {isSelected && <span className="ml-1 text-primary-600">✓</span>}
+                    </button>
+                  );
+                })}
+              </div>
+              {selectedBodySystems.length > 0 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {selectedBodySystems.length} system{selectedBodySystems.length > 1 ? 's' : ''} selected — {allSelectedTopics.size} topic{allSelectedTopics.size !== 1 ? 's' : ''} included
+                </p>
+              )}
+            </div>
+
+            {/* Clinical Topics — multi-select, always visible */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Clinical Topics</label>
+                {selectedClinicalTopics.length > 0 && (
+                  <button onClick={() => setSelectedClinicalTopics([])} className="text-xs text-primary-600 hover:text-primary-700 font-medium">
+                    Clear Topics
+                  </button>
+                )}
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {CLINICAL_TOPICS.map((t) => {
+                  const fromSystem = bodySystemTopics.has(t.key);
+                  const directlySelected = selectedClinicalTopics.includes(t.key);
+                  const isActive = fromSystem || directlySelected;
+                  return (
+                    <button key={t.key} onClick={() => toggleClinicalTopic(t.key)}
+                      className={`px-3 py-2 rounded-lg border text-left transition-all text-xs ${
+                        fromSystem
+                          ? 'border-primary-300 bg-primary-50/60 dark:bg-primary-900/10 text-primary-700 dark:text-primary-300 cursor-default'
+                          : directlySelected
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 ring-1 ring-primary-300'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 text-gray-600 dark:text-gray-400'}`}>
+                      <span>{t.icon} {t.label}</span>
+                      {isActive && <span className="ml-1 text-primary-500 text-[10px]">✓</span>}
+                    </button>
+                  );
+                })}
+              </div>
+              {allSelectedTopics.size > 0 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {allSelectedTopics.size} total topic{allSelectedTopics.size !== 1 ? 's' : ''} will be queried
+                </p>
+              )}
             </div>
 
             {/* Benner Stage */}
@@ -146,13 +229,13 @@ export default function QuizBuilder() {
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Question Type</label>
               <div className="grid grid-cols-3 gap-3">
-                <button onClick={() => { setQuestionType(''); setClinicalTopic(''); }}
+                <button onClick={() => setQuestionType('')}
                   className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
                     !questionType ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
                   All Types
                 </button>
                 {QUESTION_TYPES.map((t) => (
-                  <button key={t.key} onClick={() => { setQuestionType(t.key); if (t.key !== 'advanced') setClinicalTopic(''); }}
+                  <button key={t.key} onClick={() => setQuestionType(t.key)}
                     className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
                       questionType === t.key ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
                     {t.key === 'advanced' ? '🔬 ' : ''}{t.label}
@@ -160,27 +243,6 @@ export default function QuizBuilder() {
                 ))}
               </div>
             </div>
-
-            {/* Clinical Topic (visible when Advanced selected) */}
-            {questionType === 'advanced' && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Clinical Topic</label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <button onClick={() => setClinicalTopic('')}
-                    className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
-                      !clinicalTopic ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
-                    All Topics
-                  </button>
-                  {CLINICAL_TOPICS.map((t) => (
-                    <button key={t.key} onClick={() => setClinicalTopic(t.key)}
-                      className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
-                        clinicalTopic === t.key ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
-                      {t.icon} {t.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Question Count */}
             <div>

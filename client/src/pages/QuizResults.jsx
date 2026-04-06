@@ -150,12 +150,30 @@ export default function QuizResults() {
                 </div>
               )}
               {a.question.pharmacologyFocus && (
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {a.question.pharmacologyFocus.split(',').map((tag, j) => (
-                    <span key={j} className="inline-block px-2 py-0.5 bg-emerald-100 dark:bg-emerald-800/40 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-medium">
-                      💊 {tag.trim().replace(/_/g, ' ')}
-                    </span>
-                  ))}
+                <div className="mt-2 p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
+                  {a.question.pharmacologyFocus.includes('moa') && (
+                    <div className="mb-2 p-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40 rounded border-l-4 border-blue-500">
+                      <p className="text-xs font-bold text-blue-700 dark:text-blue-300">⚗️ MOA FOCUS</p>
+                    </div>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {a.question.pharmacologyFocus.split(',').map((tag, j) => {
+                      const cleanTag = tag.trim().replace(/_/g, ' ');
+                      const isMOA = tag.trim() === 'moa';
+                      return (
+                        <span 
+                          key={j} 
+                          className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold transition-all ${
+                            isMOA 
+                              ? 'bg-gradient-to-r from-blue-400 to-cyan-400 text-white shadow' 
+                              : 'bg-emerald-100 dark:bg-emerald-800/40 text-emerald-700 dark:text-emerald-300'
+                          }`}
+                        >
+                          {isMOA ? '⚡ ' : '💊 '}{cleanTag.toUpperCase()}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>

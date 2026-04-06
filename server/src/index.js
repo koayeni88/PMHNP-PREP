@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import prisma from './utils/prisma.js';
@@ -17,6 +19,18 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const isProduction = process.env.NODE_ENV === 'production';
 
+// Security middleware
+app.use(helmet({ contentSecurityPolicy: false }));
+
+// Rate limiting on auth routes
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' },
+});
+
 // CORS configuration
 const corsOptions = {
   origin: isProduction
@@ -28,7 +42,7 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 
 // Routes
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/questions', questionRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/analytics', analyticsRoutes);
