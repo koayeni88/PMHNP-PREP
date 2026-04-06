@@ -7,7 +7,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 28-year-old male with generalized anxiety disorder presents to the NP after 3 weeks on buspirone 10mg TID with minimal improvement. He requests lorazepam 'like my friend takes.' What is buspirone's mechanism, its expected onset timeline, and how does it fundamentally differ from benzodiazepines?",
     optionA: "Buspirone and benzodiazepines both enhance GABA at the GABA-A receptor but at different binding sites; buspirone starts working within 24 hours",
     optionB: "Buspirone blocks alpha-1 adrenergic receptors reducing sympathetic anxiety symptoms; full effect occurs in 6 months",
-    optionC: "Buspirone is a 5-HT1A PARTIAL AGONIST — at presynaptic somatodendritic 5-HT1A autoreceptors in the raphe nuclei, it initially REDUCES serotonin firing (autoreceptor activation), then over 2-4 weeks, autoreceptor DESENSITIZATION occurs → serotonin transmission NORMALIZES and anxiolytic effect emerges. Unlike benzodiazepines (which potentiate GABA-A chloride channel opening for immediate anxiolysis), buspirone has: NO sedation, NO muscle relaxation, NO anticonvulsant activity, NO abuse potential, NO cross-tolerance with alcohol/benzodiazepines, and NO withdrawal syndrome. It REQUIRES 2-4 weeks for full effect",
+    optionC: "Buspirone is a 5-HT1A PARTIAL AGONIST — at presynaptic somatodendritic 5-HT1A autoreceptors in the raphe nuclei",
     optionD: "Buspirone is an NMDA antagonist similar to ketamine; it works faster than benzodiazepines but has dissociative side effects",
     correctAnswer: "C",
     rationale: "BUSPIRONE is an AZAPIRONE anxiolytic with a completely different mechanism from benzodiazepines: PRIMARY: 5-HT1A PARTIAL AGONIST. At PRESYNAPTIC 5-HT1A autoreceptors (raphe nuclei): acts as an agonist → initially REDUCES serotonin neuron firing rate → this is why anxiety may transiently worsen early in treatment. Over 2-4 weeks: autoreceptor DESENSITIZATION → serotonin firing rate normalizes and then increases → anxiolytic effect. At POSTSYNAPTIC 5-HT1A receptors (hippocampus, cortex): partial agonist → net 'stabilizing' effect on serotonergic transmission. SECONDARY: Weak D2 antagonist (insufficient for antipsychotic effect). BENZODIAZEPINES (lorazepam, alprazolam): Bind to the GABA-A receptor at the BENZODIAZEPINE BINDING SITE (distinct from the GABA binding site). They are POSITIVE ALLOSTERIC MODULATORS — they INCREASE the FREQUENCY of chloride channel opening when GABA is already bound → enhanced inhibitory neurotransmission → immediate anxiolysis, sedation, muscle relaxation, anticonvulsant effect. CRITICAL DIFFERENCES: Benzodiazepines work ACUTELY (minutes); cause DEPENDENCE, tolerance, cross-tolerance with alcohol; have WITHDRAWAL SEIZURE risk; and are SCHEDULE IV controlled substances. Buspirone: no dependence, no abuse potential, no withdrawal, but REQUIRES patience (2-4 weeks).",
@@ -31,7 +31,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "Benzodiazepines block alcohol cravings by stimulating endorphin release; chlordiazepoxide is chosen because it has the fastest onset",
     optionB: "Benzodiazepines replace alcohol's serotonergic effects; chlordiazepoxide is preferred because of its antidepressant properties",
     optionC: "Benzodiazepines inhibit glutamate release directly; chlordiazepoxide is chosen because it has no active metabolites and is safest in liver disease",
-    optionD: "Alcohol enhances GABA-A inhibitory neurotransmission chronically; abrupt cessation causes UNOPPOSED excitatory (glutamate/NMDA) overactivity → seizures, delirium tremens. Benzodiazepines are CROSS-TOLERANT with alcohol at the GABA-A receptor, substituting for alcohol's GABAergic effect and preventing excitotoxic complications. Chlordiazepoxide is preferred because its LONG half-life (24-48 hours) and ACTIVE METABOLITES provide smooth, self-tapering plasma levels — reducing breakthrough withdrawal and dosing frequency",
+    optionD: "Alcohol enhances GABA-A inhibitory neurotransmission chronically; abrupt cessation causes UNOPPOSED excitatory (glutamate/NMDA) overactivity → seizures, delirium tremens.",
     correctAnswer: "D",
     rationale: "ALCOHOL acts at MULTIPLE receptor targets, but the most important for withdrawal: (1) ENHANCES GABA-A → increased inhibitory tone, (2) INHIBITS NMDA glutamate receptors → reduced excitatory tone. Chronic alcohol → COMPENSATORY neuroadaptation: GABA-A receptors are DOWNREGULATED (fewer receptors), NMDA receptors are UPREGULATED (more receptors). ABRUPT CESSATION: suddenly both GABA enhancement AND NMDA inhibition are removed → massive excitatory rebound: upregulated NMDA + downregulated GABA = CNS hyperexcitability → tremor → seizures → delirium tremens → death (5-15% mortality if untreated). BENZODIAZEPINES: bind the SAME GABA-A receptor as alcohol (both are GABA-A positive allosteric modulators). Cross-tolerance means benzodiazepines can substitute for alcohol's GABAergic effect, preventing the excitatory rebound. CHLORDIAZEPOXIDE advantages: (1) Long half-life (24-48 hours + active metabolites desmethylchlordiazepoxide, demoxepam, desmethyldiazepam with even longer t½), (2) Self-tapering pharmacokinetics — smooth decline in plasma levels reduces breakthrough symptoms, (3) Less euphoria → lower abuse potential during taper. ALTERNATIVES: diazepam (also long-acting), lorazepam (preferred in LIVER DISEASE — no hepatic oxidation, glucuronidation only), oxazepam (similar liver-safe profile).",
     explanationA: "Benzodiazepines don't affect cravings or endorphins. Naltrexone and acamprosate are anti-craving medications. Chlordiazepoxide has a slower onset than diazepam — it's chosen for its long half-life, not speed.",
@@ -52,7 +52,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 45-year-old female with neuropathic pain from diabetic peripheral neuropathy is prescribed pregabalin. Her sister asks if this medication is addictive since 'it sounds like a nerve drug.' What is pregabalin's mechanism, and what is its abuse/dependence potential?",
     optionA: "Pregabalin is a direct GABA-A agonist identical to benzodiazepines; high abuse potential and schedule I",
-    optionB: "Despite its name, pregabalin does NOT directly bind GABA receptors or affect GABA synthesis. It binds to the ALPHA-2-DELTA (α2δ) SUBUNIT of voltage-gated calcium channels presynaptically, reducing calcium influx → decreased release of excitatory neurotransmitters (glutamate, norepinephrine, substance P) from hyperexcited neurons. It IS Schedule V (lowest DEA schedule) due to reports of euphoria at supratherapeutic doses, but has lower abuse potential than benzodiazepines, opioids, or gabapentin-equivalent doses",
+    optionB: "Despite its name, pregabalin does NOT directly bind GABA receptors or affect GABA synthesis.",
     optionC: "Pregabalin inhibits GABA transaminase, increasing GABA levels in the brain similar to valproic acid; it has no abuse potential",
     optionD: "Pregabalin blocks sodium channels like lidocaine; abuse potential is identical to opioids since both reduce pain through CNS depression",
     correctAnswer: "B",
@@ -74,7 +74,7 @@ export const anxiolyticAntipsychoticQuestions = [
   },
   {
     stem: "A 25-year-old male diagnosed with schizophrenia is started on risperidone 2mg daily. After 3 weeks, he develops breast tenderness, galactorrhea, and sexual dysfunction. His prolactin level is 85 ng/mL (elevated). What receptor mechanism explains this, and which antipsychotic has the LOWEST risk of hyperprolactinemia?",
-    optionA: "Risperidone potently blocks D2 dopamine receptors in the TUBEROINFUNDIBULAR PATHWAY — dopamine normally inhibits prolactin release from anterior pituitary lactotrophs via D2 receptors. D2 blockade removes this 'tonic dopaminergic inhibition' → prolactin rise. Risperidone is the HIGHEST prolactin-elevating antipsychotic because it poorly penetrates the blood-brain barrier relative to its D2 affinity → high pituitary exposure. The LOWEST prolactin-elevating antipsychotic is ARIPIPRAZOLE — a D2 PARTIAL AGONIST that provides sufficient dopaminergic stimulation at pituitary D2 receptors to maintain prolactin suppression",
+    optionA: "Risperidone potently blocks D2 dopamine receptors in the TUBEROINFUNDIBULAR PATHWAY — dopamine normally inhibits prolactin release from anterior pituitary lactotrophs via D2 receptors.",
     optionB: "Risperidone's alpha-1 blockade in the anterior pituitary releases prolactin inhibition; switch to haloperidol for less prolactin elevation",
     optionC: "Risperidone's serotonin 5-HT2C antagonism stimulates prolactin release; switch to clozapine which has no serotonergic activity",
     optionD: "Risperidone's histamine H1 blockade triggers prolactin release; switch to quetiapine for less prolactin elevation due to lower H1 affinity",
@@ -100,7 +100,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "Clozapine is the most potent D2 blocker available; mandatory monitoring is for hepatotoxicity with monthly liver function tests",
     optionB: "Clozapine works by blocking NMDA glutamate receptors; mandatory monitoring is for renal toxicity with monthly creatinine levels",
     optionC: "Clozapine is a pure serotonin-dopamine antagonist; mandatory monitoring is for QTc prolongation with monthly ECGs",
-    optionD: "Clozapine has a UNIQUE multimodal receptor profile — loose D2 binding with rapid dissociation ('fast-off' kinetics), potent 5-HT2A antagonism, D4 antagonism, and activity at muscarinic, histaminergic, and adrenergic receptors. Its efficacy in treatment-resistant schizophrenia likely relates to its HIGH 5-HT2A:D2 BINDING RATIO and its unique glutamatergic and GABAergic effects. MANDATORY: REMS-enrolled absolute neutrophil count (ANC) monitoring — weekly for 6 months, then biweekly for 6 months, then monthly — due to risk of AGRANULOCYTOSIS (1-2%), a potentially fatal loss of neutrophils that typically occurs in the first 6 months",
+    optionD: "Clozapine has a UNIQUE multimodal receptor profile",
     correctAnswer: "D",
     rationale: "CLOZAPINE is the GOLD STANDARD for treatment-resistant schizophrenia (failed ≥2 adequate antipsychotic trials) — the ONLY antipsychotic with this FDA indication. UNIQUE MECHANISM: (1) LOOSE D2 BINDING ('fast-off' theory): rapidly dissociates from D2 receptors → allows physiological dopamine surges through → reduces EPS and prolactin elevation while maintaining mesolimbic therapeutic effect. (2) HIGH 5-HT2A:D2 RATIO: potent 5-HT2A antagonism → disinhibits dopamine release in mesocortical pathway → IMPROVES negative/cognitive symptoms. (3) 5-HT2C, D4, M1, H1, alpha-1 activity → broad receptor engagement may explain unique efficacy. (4) Evidence for glutamatergic modulation (NMDA facilitation) and GABAergic effects. AGRANULOCYTOSIS (clozapine REMS): ~1-2% incidence, typically 6-18 weeks. Mechanism: likely immune-mediated via reactive clozapine metabolites → neutrophil destruction. ANC monitoring schedule: WEEKLY × 6 months → BIWEEKLY × 6 months → MONTHLY thereafter. ANC <1000 (severe neutropenia) → discontinue immediately (ANC <500 = agranulocytosis). OTHER SERIOUS EFFECTS: myocarditis (first month — highest risk), seizures (dose-dependent, especially >600mg), metabolic syndrome (weight gain, diabetes, dyslipidemia — worst of all antipsychotics), constipation → ileus (muscarinic blockade), sialorrhea (paradoxically — M4 agonism in salivary glands despite other antimuscarinic effects).",
     explanationA: "Clozapine is actually one of the WEAKEST D2 binders — its rapid D2 dissociation is key to fewer EPS. The mandatory monitoring is for agranulocytosis (ANC monitoring), not hepatotoxicity.",
@@ -120,7 +120,7 @@ export const anxiolyticAntipsychoticQuestions = [
   },
   {
     stem: "A 40-year-old male on haloperidol 10mg daily for schizophrenia presents with severe neck twisting to the left (torticollis), jaw clenching, and inability to speak clearly. The onset was acute, occurring 4 hours after a dose increase. What is the mechanism of this reaction, and what is the immediate treatment?",
-    optionA: "ACUTE DYSTONIA — caused by haloperidol's potent D2 blockade in the NIGROSTRIATAL PATHWAY. Abrupt dopamine antagonism in the basal ganglia disrupts the D2-mediated dopamine-acetylcholine balance, causing relative CHOLINERGIC EXCESS → sustained involuntary muscle contractions. Treatment: IM/IV BENZTROPINE (anticholinergic) 1-2mg or diphenhydramine (antihistamine with anticholinergic properties) 50mg IM — restores the dopamine-acetylcholine balance by blocking the excessive cholinergic activity. Response is typically within 5-15 minutes with IM administration",
+    optionA: "ACUTE DYSTONIA — caused by haloperidol's potent D2 blockade in the NIGROSTRIATAL PATHWAY.",
     optionB: "Serotonin syndrome from haloperidol's serotonergic properties; treat with cyproheptadine",
     optionC: "Tardive dyskinesia from long-term D2 blockade; treat by increasing haloperidol dose",
     optionD: "Neuroleptic malignant syndrome; treat with dantrolene and bromocriptine",
@@ -145,7 +145,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 50-year-old female on olanzapine 20mg daily for bipolar I disorder has gained 30 lbs over 6 months, and her HbA1c has risen from 5.4% to 6.8%. What is the mechanism of antipsychotic-induced metabolic syndrome, and what is the metabolic risk hierarchy among second-generation antipsychotics?",
     optionA: "Metabolic effects are caused by D2 blockade directly stimulating insulin resistance; all second-generation antipsychotics carry identical metabolic risk",
     optionB: "Metabolic effects are solely from corticosteroid contamination in antipsychotic formulations; switching brands eliminates the risk",
-    optionC: "Antipsychotic-induced metabolic syndrome involves MULTIPLE receptor mechanisms: (1) H1 HISTAMINE ANTAGONISM → appetite stimulation and weight gain (strongest correlation), (2) 5-HT2C ANTAGONISM → removes serotonin-mediated satiety signaling → increases food intake, (3) M3 MUSCARINIC ANTAGONISM → directly impairs pancreatic beta-cell insulin secretion → DIABETES risk independent of weight gain, (4) possible effects on leptin/adiponectin signaling. Metabolic risk hierarchy (highest to lowest): CLOZAPINE = OLANZAPINE >> quetiapine = risperidone >> aripiprazole = ziprasidone = lurasidone (lowest risk)",
+    optionC: "Antipsychotic-induced metabolic syndrome involves MULTIPLE receptor mechanisms: (1) H1 HISTAMINE ANTAGONISM → appetite stimulation and weight gain (strongest correlation)",
     optionD: "Only first-generation antipsychotics cause metabolic syndrome; all atypical antipsychotics are metabolically safe",
     correctAnswer: "C",
     rationale: "ANTIPSYCHOTIC METABOLIC SYNDROME is receptor-mediated, not idiosyncratic: (1) H1 HISTAMINE BLOCKADE: H1 receptors in the hypothalamic feeding centers normally promote satiety when activated by histamine. H1 antagonism → increased appetite → WEIGHT GAIN. Olanzapine and clozapine have the highest H1 affinity. (2) 5-HT2C ANTAGONISM: 5-HT2C receptors in the hypothalamus mediate satiety (this is why lorcaserin, a 5-HT2C agonist, [withdrawn] reduced appetite). Blocking 5-HT2C → removes satiety signal → hyperphagia. (3) M3 MUSCARINIC ANTAGONISM: M3 receptors on pancreatic beta cells regulate insulin secretion. M3 blockade → REDUCED insulin secretion → hyperglycemia, potentially independent of weight gain. This may explain why clozapine and olanzapine (potent M3 antagonists) cause DKA in some patients WITHOUT significant weight gain. (4) LEPTIN/ADIPONECTIN: antipsychotics may directly alter adipokine signaling. METABOLIC MONITORING (APA/ADA consensus): baseline + periodic weight, waist circumference, fasting glucose, lipid panel, blood pressure. Screening intervals: 4 weeks, 8 weeks, 12 weeks, then annually.",
@@ -166,7 +166,7 @@ export const anxiolyticAntipsychoticQuestions = [
   },
   {
     stem: "A 22-year-old male with first-episode psychosis is started on aripiprazole. After 2 weeks, he develops restlessness, inability to sit still, and an inner sense of urge to move. What is this condition, its mechanism, and the recommended management?",
-    optionA: "AKATHISIA — a subjective sense of inner restlessness with objective motor manifestations (pacing, rocking, inability to remain seated). Mechanism involves complex interactions: D2 blockade in the mesocortical pathway (creating a dysphoric state) and/or dopamine-serotonin imbalance in the basal ganglia circuits. Aripiprazole, despite being a partial D2 agonist, can cause akathisia (7-25% incidence) possibly through its 5-HT2A activity or mesocortical dopamine modulation. Treatment: PROPRANOLOL 20-80mg/day (most evidence-based — beta-2 antagonism in locus coeruleus reduces adrenergic restlessness), benztropine/benzodiazepines (second-line), mirtazapine (5-HT2A blockade), or dose reduction",
+    optionA: "AKATHISIA — a subjective sense of inner restlessness with objective motor manifestations (pacing",
     optionB: "Tardive dyskinesia — treat with VMAT2 inhibitors (valbenazine)",
     optionC: "Anxiety disorder exacerbation — increase the aripiprazole dose for greater anxiolytic effect",
     optionD: "Restless legs syndrome — treat with pramipexole (dopamine agonist)",
@@ -191,7 +191,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 30-year-old male with schizophrenia on clozapine 400mg/day for 8 months (excellent symptom control) presents with fever (39.2°C), tachycardia (HR 118), malaise, and sore throat. His absolute neutrophil count (ANC) returns at 450/μL (critical low). What is the mechanism of clozapine-induced agranulocytosis, and what immediate actions are required?",
     optionA: "Clozapine causes agranulocytosis by direct myelosuppression of all cell lines in bone marrow, identical to chemotherapy; reduce dose by 50% and monitor weekly",
     optionB: "This is a benign viral illness unrelated to clozapine; continue the medication and treat symptomatically since clozapine is the only effective treatment for his schizophrenia",
-    optionC: "Clozapine-induced agranulocytosis is an IDIOSYNCRATIC immune-mediated reaction. The proposed mechanism: clozapine is oxidized to a reactive nitrenium ion metabolite → this haptenates neutrophil surface proteins → the immune system recognizes modified neutrophils as foreign → T-cell and/or antibody-mediated destruction of neutrophils AND neutrophil precursors in bone marrow. This is NOT dose-dependent. ANC <500/μL = AGRANULOCYTOSIS: (1) STOP clozapine IMMEDIATELY and permanently, (2) Institute reverse isolation/neutropenic precautions, (3) Blood cultures + empiric broad-spectrum antibiotics for febrile neutropenia (pseudomonal coverage), (4) Consider G-CSF (filgrastim) to stimulate neutrophil recovery, (5) NEVER rechallenge with clozapine after agranulocytosis",
+    optionC: "Clozapine-induced agranulocytosis is an IDIOSYNCRATIC immune-mediated reaction.",
     optionD: "Clozapine causes agranulocytosis by blocking G-CSF receptors on neutrophil precursors; treat by adding exogenous G-CSF while continuing clozapine",
     correctAnswer: "C",
     rationale: "CLOZAPINE-INDUCED AGRANULOCYTOSIS (CIA): Incidence ~0.8% (higher than any other antipsychotic). Peak risk: months 1-6 (but can occur anytime). MECHANISM: Idiosyncratic, immune-mediated — NOT dose-related. Leading hypothesis: (1) Clozapine undergoes hepatic bioactivation by myeloperoxidase and CYP enzymes → reactive NITRENIUM ION intermediate. (2) This electrophilic metabolite covalently binds (haptenates) neutrophil membrane proteins. (3) Modified proteins are presented as neoantigens → HLA-mediated immune response → T-lymphocyte and/or antibody-mediated neutrophil destruction. (4) Some evidence for direct toxicity to myeloid precursors in bone marrow. HLA associations: HLA-DQB1 (6672G>C), HLA-B*59:01 in certain populations — genetic susceptibility to immune recognition. CLOZAPINE REMS (Risk Evaluation and Mitigation Strategy): Mandatory ANC monitoring — weekly × 6 months → biweekly × 6 months → monthly thereafter. ANC thresholds: >1500 (general) or >1000 (benign ethnic neutropenia) = continue; 1000-1499 = increased monitoring; 500-999 = interrupt + daily ANC; <500 = STOP permanently. THIS CASE: ANC 450 with fever = MEDICAL EMERGENCY. Febrile neutropenia has ~10% mortality without treatment. Action: STOP clozapine forever, blood cultures, broad-spectrum antibiotics immediately (piperacillin-tazobactam or meropenem), G-CSF.",
@@ -215,7 +215,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "Duloxetine treats depression through serotonin reuptake inhibition and anxiety through a completely separate anti-histamine sedating mechanism",
     optionB: "Duloxetine binds directly to GABA-A receptors like benzodiazepines for anxiety and blocks dopamine reuptake for depression — it simply combines two separate drug mechanisms",
     optionC: "Duloxetine works only on depression; the anxiety improvement is purely a placebo effect from the patient feeling less depressed",
-    optionD: "Duloxetine inhibits BOTH the serotonin transporter (SERT) and norepinephrine transporter (NET). ANTIDEPRESSANT: Increased synaptic 5-HT in raphe nuclei projections to prefrontal cortex → enhanced serotonergic transmission → improved mood regulation. Increased NE from locus coeruleus projections → improved motivation, energy, concentration. ANXIOLYTIC: Increased 5-HT at amygdala and prefrontal cortex → enhanced top-down inhibitory control over amygdala fear circuitry → reduced anxiety. Serotonin enhances GABA interneuron activity in the amygdala → dampened fear/threat responses. Additionally, NE at optimal levels in PFC enhances executive function → better cognitive control of worry. The shared neuroanatomy (amygdala-PFC circuit dysfunction) underlies BOTH anxiety and depression — duloxetine's dual reuptake inhibition addresses BOTH limbs of this circuit",
+    optionD: "Duloxetine inhibits BOTH the serotonin transporter (SERT) and norepinephrine transporter (NET).",
     correctAnswer: "D",
     rationale: "SNRI DUAL MECHANISM: Duloxetine blocks SERT (Ki ~0.8 nM) and NET (Ki ~7.5 nM) — roughly 10× more potent at SERT than NET (unlike venlafaxine which requires higher doses for meaningful NET inhibition). SEROTONERGIC CONTRIBUTION: (1) DEPRESSION: 5-HT projections from dorsal raphe → prefrontal cortex, hippocampus → mood regulation, emotional processing. Increased 5-HT → downstream BDNF expression + neuroplasticity → antidepressant effect (weeks to manifest). (2) ANXIETY: 5-HT projections to amygdala modulate fear circuitry. Serotonin activates 5-HT1A receptors on GABAergic interneurons in the basolateral amygdala → GABA release → inhibition of glutamatergic output neurons → REDUCED amygdala reactivity to threats → anxiolysis. Also enhances prefrontal cortex 5-HT → stronger top-down (PFC → amygdala) inhibitory control. NORADRENERGIC CONTRIBUTION: (1) DEPRESSION: NE from locus coeruleus → PFC → improved attention, motivation, energy, psychomotor function (addresses the 'fatigue/anhedonia' depressive symptoms that SSRIs often miss). (2) ANXIETY: Optimal NE in PFC enhances working memory and executive function → better cognitive reappraisal of threats → reduced rumination/worry. However, EXCESSIVE NE can worsen anxiety (inverted-U curve) — explains why some patients experience initial anxiety on SNRIs. SHARED CIRCUIT: Anxiety and depression involve dysfunction in the same amygdala-PFC-hippocampal circuit — not separate brain systems. Both involve amygdala hyperactivation + PFC hypoactivation. Duloxetine's dual mechanism addresses both components simultaneously.",
     explanationA: "Duloxetine has minimal antihistamine activity. Its anxiolytic effect is NOT from sedation — it's from serotonergic modulation of amygdala fear circuits and PFC enhancement. The mechanism is neuromodulatory, not sedating.",
@@ -238,7 +238,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "NMS and serotonin syndrome are identical conditions caused by the same mechanism — excessive serotonin receptor stimulation. Treatment is the same for both",
     optionB: "NMS is an allergic reaction to antipsychotic medication mediated by IgE; treatment is epinephrine and antihistamines as in anaphylaxis",
     optionC: "NMS is caused by excessive dopamine release in the brain; treatment involves increasing the antipsychotic dose to restore dopamine balance",
-    optionD: "NMS results from sudden, profound D2 receptor blockade in the hypothalamus (disrupted thermoregulation) and nigrostriatal pathway (severe rigidity from uninhibited cholinergic tone). The mechanism: D2 blockade → loss of dopaminergic inhibition of cholinergic interneurons in the striatum → massive acetylcholine excess → 'lead-pipe' skeletal muscle rigidity → sustained contraction → rhabdomyolysis (CK elevation), hyperthermia (from muscle activity + hypothalamic dysfunction), autonomic instability. SEROTONIN SYNDROME differs: caused by EXCESS serotonergic activity (5-HT1A/2A) → presents with CLONUS/myoclonus (not rigidity), hyperreflexia, agitation, diarrhea, rapid onset (hours). NMS treatment: STOP the antipsychotic, dantrolene (blocks RyR calcium release in skeletal muscle → reduces rigidity), bromocriptine (D2 agonist → restores dopaminergic tone). SS treatment: cyproheptadine (5-HT2A antagonist)",
+    optionD: "NMS results from sudden, profound D2 receptor blockade in the hypothalamus (disrupted thermoregulation) and nigrostriatal pathway (severe rigidity from uninhibited cholinergic tone).",
     correctAnswer: "D",
     rationale: "NMS PATHOPHYSIOLOGY: A life-threatening (mortality ~5-10%) idiosyncratic reaction to dopamine antagonists. TWO critical sites of D2 blockade: (1) HYPOTHALAMUS: D2 receptors in the preoptic area regulate the thermoregulatory set point. Dopamine normally facilitates heat dissipation. Acute D2 blockade → thermoregulatory failure → hyperthermia. Also disrupts autonomic regulation → tachycardia, labile BP, diaphoresis. (2) NIGROSTRIATAL PATHWAY: D2 receptors on medium spiny neurons modulate the direct vs indirect motor pathways. D2 normally inhibits cholinergic interneurons in the striatum. Acute blockade → UNOPPOSED cholinergic activity → extreme skeletal muscle rigidity ('lead-pipe') → continuous involuntary muscle contraction → (a) Rhabdomyolysis (CK >1000, often >10,000), (b) Metabolic heat generation → worsens hyperthermia, (c) Myoglobinuria → AKI risk. NMS VS SEROTONIN SYNDROME — KEY DIFFERENTIATORS: NMS: RIGIDITY (lead-pipe), slow onset (days-weeks), bradyreflexia, CK markedly elevated. SS: CLONUS/myoclonus (rhythmic involuntary movements), rapid onset (hours), HYPERreflexia, CK mildly elevated or normal. NMS TREATMENT: (1) STOP offending agent immediately. (2) Aggressive cooling (ice packs, cooling blankets). (3) DANTROLENE: blocks ryanodine receptors (RyR1) on skeletal muscle SR → prevents Ca²⁺ release → muscle relaxation → reduces rigidity, rhabdomyolysis, and heat production. (4) BROMOCRIPTINE (D2 agonist): restores dopaminergic signaling in hypothalamus and striatum. (5) IV hydration + monitor renal function. (6) ICU level care.",
     explanationA: "NMS and SS have OPPOSITE neurotransmitter causes: NMS = dopamine DEFICIENCY (D2 blockade), SS = serotonin EXCESS (5-HT overactivation). Treatments are different: dantrolene/bromocriptine for NMS vs cyproheptadine for SS.",
@@ -260,7 +260,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 28-year-old female with PTSD and comorbid insomnia is prescribed prazosin for trauma-related nightmares. She responds well, with nightmare frequency decreasing from nightly to once weekly. What is prazosin's mechanism for nightmare suppression, and why is an alpha-1 adrenergic antagonist effective in a sleep disorder?",
     optionA: "Prazosin is a GABA-A agonist that deepens sleep cycles, preventing the light sleep stages where nightmares occur",
     optionB: "Prazosin works as a sedating antihistamine that simply makes the patient sleep too deeply to remember nightmares",
-    optionC: "In PTSD, the noradrenergic system is hyperactivated — elevated nocturnal norepinephrine (NE) levels activate alpha-1 adrenergic receptors in the prefrontal cortex, amygdala, and brainstem during REM sleep → excessive arousal + emotionally charged dream content → trauma-related nightmares and sleep disruption. Prazosin is a centrally-acting alpha-1 antagonist that crosses the blood-brain barrier → blocks alpha-1 receptors in these regions → reduces NE-driven nocturnal hyperarousal → decreases nightmare frequency/intensity + improves total sleep time and REM sleep quality WITHOUT suppressing REM itself",
+    optionC: "In PTSD, the noradrenergic system is hyperactivated — elevated nocturnal norepinephrine (NE) levels activate alpha-1 adrenergic receptors in the prefrontal cortex, amygdala",
     optionD: "Prazosin blocks beta-2 receptors in the hippocampus to prevent fear memory consolidation during sleep; nightmares stop because traumatic memories are erased",
     correctAnswer: "C",
     rationale: "PTSD NORADRENERGIC HYPERACTIVATION: In PTSD, the locus coeruleus-NE system is pathologically overactive, particularly during sleep. Normal NE levels decrease during sleep progression (lowest during REM). In PTSD: (1) Nocturnal NE levels remain ELEVATED (CSF NE studies show persistent elevation). (2) Alpha-1 receptor activation in the medial prefrontal cortex and amygdala during REM sleep → excessive emotional arousal during dreaming → content is dominated by threat/trauma themes → nightmares. (3) NE-driven hyperarousal also fragments sleep architecture → reduced total sleep time, frequent awakenings. PRAZOSIN MECHANISM: Alpha-1 selective antagonist (quinazoline derivative). Crosses BBB (moderately lipophilic). Blocks alpha-1 receptors centrally → (1) Reduces NE-mediated arousal in amygdala/PFC during sleep → nightmare frequency/intensity ↓. (2) Does NOT suppress REM sleep (unlike many psychotropics) → preserves healthy sleep architecture. (3) Reduces nocturnal awakenings → improved sleep continuity. EVIDENCE: Raskind et al. — prazosin reduced trauma nightmares and improved sleep quality in combat veterans. VA/DOD CPG recommends prazosin for PTSD-associated nightmares. DOSING: Start 1mg at bedtime → titrate to 6-15mg (men) or 2-6mg (women). First-dose orthostatic hypotension is the main risk — start low, take at bedtime.",
@@ -283,7 +283,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 32-year-old female with bipolar I disorder is maintained on quetiapine 300mg at bedtime. She notes significant sedation but good mood stability. What specific receptor profile of quetiapine explains its sedating, mood-stabilizing, and antidepressant properties at different doses, and why is it described as a 'dirty drug' in terms of receptor binding?",
     optionA: "Quetiapine works exclusively through D2 blockade at all doses; sedation is simply a side effect of high D2 occupancy",
     optionB: "Quetiapine is a pure serotonin 5-HT1A agonist identical to buspirone; its mood stabilization comes from serotonergic modulation only",
-    optionC: "Quetiapine has DOSE-DEPENDENT receptor engagement: At LOW doses (25-100mg): predominantly H1 histamine antagonism (sedation) + 5-HT2A blockade (sleep architecture improvement). At MODERATE doses (150-300mg): adds NET inhibition via its active metabolite NORQUETIAPINE → norepinephrine reuptake inhibition → ANTIDEPRESSANT effect (this is why quetiapine has FDA approval for bipolar depression). Norquetiapine is also a potent 5-HT2C antagonist → weight gain but contributes to antidepressant/anxiolytic effects. At HIGHER doses (400-800mg): significant D2 occupancy → antipsychotic effect for mania/psychosis. This layered receptor engagement across the dose range is why quetiapine is called 'dirty' — it hits H1, alpha-1, 5-HT2A, 5-HT2C, NET, M1, and D2 with different dose-dependent potencies",
+    optionC: "Quetiapine has DOSE-DEPENDENT receptor engagement: At LOW doses (25-100mg): predominantly H1 histamine antagonism (sedation) + 5-HT2A blockade (sleep architecture improvement).",
     optionD: "Quetiapine's different effects at different doses are purely marketing — the drug has the same receptor profile at all doses, and clinical differences are placebo effects",
     correctAnswer: "C",
     rationale: "QUETIAPINE RECEPTOR PHARMACOLOGY: Quetiapine has one of the most complex receptor profiles of any psychotropic medication, with DIFFERENT receptors dominating at different dose ranges. LOW DOSE (25-100mg — insomnia/anxiety): (1) H1 antagonism (Ki ~11 nM — very potent) → sedation, sleep onset. (2) Alpha-1 antagonism → orthostatic hypotension, contributes to sedation. (3) 5-HT2A antagonism → improves sleep architecture (increases slow-wave sleep). At these doses, D2 occupancy is <50% → no antipsychotic effect. MODERATE DOSE (150-300mg — bipolar depression): NORQUETIAPINE (active metabolite formed by CYP3A4) becomes clinically significant: (1) NET inhibition (Ki ~12 nM — potent NE reuptake blocker) → functionally acts as an SNRI → antidepressant effect. This is UNIQUE among antipsychotics. (2) 5-HT2C antagonism → enhances NE/DA release in PFC → augments antidepressant effect (but also drives appetite/weight gain). (3) Partial 5-HT1A agonism → anxiolytic. HIGH DOSE (400-800mg — psychosis/mania): D2 occupancy reaches 50-60% transiently (quetiapine dissociates rapidly from D2 — 'hit and run' binding) → antipsychotic efficacy with LOW EPS risk (brief D2 occupancy allows dopaminergic transmission recovery). FDA APPROVALS reflect this pharmacology: Insomnia/anxiety (low dose, off-label), Bipolar depression (300mg, FDA approved), Schizophrenia/mania (400-800mg, FDA approved), MDD adjunct (150-300mg, FDA approved).",
@@ -298,14 +298,14 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Map quetiapine's dose-dependent receptor engagement to its multiple clinical indications and explain the pharmacological basis for its 'dirty drug' receptor profile",
     questionType: "advanced",
-    clinicalTopic: "antipsychotics",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert psychopharmacology requires understanding that quetiapine's multiple indications reflect genuinely DIFFERENT receptor mechanisms at different doses — not the same mechanism repackaged — and that its active metabolite norquetiapine has a completely different pharmacological profile than the parent compound."
   },
   {
     stem: "A 40-year-old male with treatment-resistant OCD (failed adequate trials of fluoxetine, fluvoxamine, and clomipramine) is being considered for augmentation with low-dose aripiprazole (2mg). Why are antipsychotics used to augment SSRIs in refractory OCD, and what specific receptor actions contribute to aripiprazole's augmenting effect in OCD specifically?",
     optionA: "Aripiprazole simply provides additional D2 blockade which directly treats OCD; the SSRI is unnecessary in combination",
-    optionB: "OCD involves hyperactivity in the cortico-striato-thalamo-cortical (CSTC) circuit, particularly orbitofrontal cortex (OFC) → caudate/putamen → thalamus → back to OFC. SSRIs reduce this circuit hyperactivity through serotonergic modulation, but ~40-60% of patients have incomplete response. Aripiprazole augments through: (1) D2 partial agonism in the striatum — modulates (without fully blocking) dopaminergic signaling in the caudate nucleus → 'tuning' the overactive OFC-striatal loop, (2) 5-HT1A partial agonism — enhances serotonergic transmission at autoreceptors that were limiting SSRI efficacy, (3) 5-HT2A antagonism — removes serotonergic 'brake' on cortical dopamine/glutamate release in PFC → improved PFC executive control over compulsive behavior",
+    optionB: "OCD involves hyperactivity in the cortico-striato-thalamo-cortical (CSTC) circuit, particularly orbitofrontal cortex (OFC) → caudate/putamen → thalamus → back to OFC.",
     optionC: "Antipsychotics cure OCD by eliminating the psychotic features that cause obsessions; aripiprazole's sedation is what stops compulsive behaviors",
     optionD: "Aripiprazole augmentation works exclusively through its antihistamine properties, causing sedation that prevents patients from carrying out compulsions",
     correctAnswer: "B",
@@ -330,7 +330,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "The black box warning is about hepatotoxicity from antipsychotic metabolism in elderly livers; antipsychotics should never be used in any elderly patient for any reason",
     optionB: "The mortality increase is exclusively from QTc prolongation-induced cardiac arrest; using QTc-safe antipsychotics like ziprasidone eliminates the risk entirely",
     optionC: "The black box warning is about tardive dyskinesia risk in the elderly; antipsychotics are safe in dementia as long as EPS monitoring is performed monthly",
-    optionD: "The FDA black box warning states antipsychotics increase all-cause mortality by ~1.6-1.7× in elderly dementia patients. Mechanisms include: (1) CEREBROVASCULAR EVENTS — increased stroke/TIA risk (especially with risperidone, olanzapine) possibly from prothrombotic effects + cerebrovascular disease, (2) CARDIOVASCULAR — QTc prolongation → torsades de pointes, (3) INFECTIOUS — sedation → aspiration pneumonia (most common cause of death in trials), (4) METABOLIC — hyperglycemia, dehydration. Limited justified use: ONLY when behavioral symptoms pose IMMINENT DANGER to self/others (physical aggression, severe psychosis with distress), after exhausting non-pharmacological interventions, using the lowest dose for the shortest duration, with informed consent from surrogate decision-maker",
+    optionD: "The FDA black box warning states antipsychotics increase all-cause mortality by ~1.6-1.7× in elderly dementia patients. Mechanisms include: (1) CEREBROVASCULAR EVENTS",
     correctAnswer: "D",
     rationale: "FDA BLACK BOX WARNING (2005, extended 2008): ALL antipsychotics (both first and second generation) carry a Black Box Warning for increased mortality in elderly patients with dementia-related psychosis/behavioral disturbance. MORTALITY DATA: 17 placebo-controlled trials → 4.5% mortality (antipsychotic) vs 2.6% (placebo) = 1.6-1.7× increased risk. Number needed to harm ~59, typically over 10-week treatment period. MECHANISMS OF DEATH: (1) ASPIRATION PNEUMONIA: Most common identified cause. Antipsychotic-induced sedation + pharyngeal muscle relaxation + swallowing dysfunction → aspiration → pneumonia → death. Elderly dementia patients already have impaired swallowing. (2) CEREBROVASCULAR EVENTS: 2-3× increased risk of stroke/TIA, particularly with risperidone and olanzapine. Mechanism possibly: platelet aggregation effects + cerebral small vessel disease + orthostatic hypotension → watershed infarcts. (3) CARDIAC: QTc prolongation → ventricular arrhythmia risk. Also: direct cardiac conduction effects. (4) METABOLIC: Hyperglycemia/DKA (especially olanzapine, clozapine), dehydration from impaired thirst mechanism. (5) SUDDEN CARDIAC DEATH: Autonomic dysfunction from alpha-1/muscarinic blockade. WHEN JUSTIFIED (per APA practice guideline): (a) Behaviors causing IMMINENT danger (hitting, biting, severe aggression). (b) Marked psychosis causing distress (delusions, hallucinations causing fear/agitation). (c) AFTER non-pharmacological interventions have been tried (redirection, environmental modification, treating underlying causes like pain/UTI/constipation). (d) INFORMED CONSENT from healthcare proxy. (e) LOWEST effective dose. (f) Time-limited trial with regular reassessment for discontinuation. (g) Deprescribing attempted at least every 4-6 months.",
     explanationA: "The warning is about OVERALL MORTALITY (cerebrovascular, infectious, cardiac, metabolic), not specifically hepatotoxicity. Antipsychotics CAN be used in elderly patients for appropriate indications (schizophrenia, bipolar) — the warning is specific to DEMENTIA-RELATED behavioral disturbance.",
@@ -353,7 +353,7 @@ export const anxiolyticAntipsychoticQuestions = [
     optionA: "These symptoms are a relapse of panic disorder — paroxetine should be restarted at 40mg and never discontinued",
     optionB: "Discontinuation syndrome is psychological — it represents the patient's anxiety about not having medication. Reassurance alone is sufficient",
     optionC: "These are allergic symptoms from paroxetine metabolites being released from fat stores during discontinuation; antihistamines will resolve them",
-    optionD: "SSRI discontinuation syndrome results from abrupt loss of serotonergic tone after receptor adaptation. During chronic SSRI use: (1) postsynaptic 5-HT receptors DOWNREGULATE (fewer receptors needed because synaptic 5-HT is constantly elevated), (2) presynaptic 5-HT1A autoreceptors DESENSITIZE (removing negative feedback → enhanced 5-HT firing). When the SSRI is withdrawn rapidly, synaptic 5-HT drops → downregulated postsynaptic receptors cannot compensate → SEROTONIN DEFICIT in adapted brain → constellation of symptoms. Paroxetine has HIGHEST risk because: (a) shortest half-life among common SSRIs (~21 hours vs fluoxetine's 4-6 DAYS), (b) potent SERT inhibition → greatest receptor adaptation, (c) anticholinergic properties → cholinergic rebound adds to discontinuation symptoms, (d) NO active long-acting metabolites (fluoxetine has norfluoxetine, t½ ~14 days → self-tapering effect)",
+    optionD: "SSRI discontinuation syndrome results from abrupt loss of serotonergic tone after receptor adaptation.",
     correctAnswer: "D",
     rationale: "SSRI DISCONTINUATION SYNDROME: Occurs in ~20-50% of patients who abruptly stop SSRIs (higher with paroxetine, venlafaxine). MECHANISM: (1) RECEPTOR ADAPTATION: Chronic SSRI → constant high synaptic 5-HT → brain adapts: postsynaptic 5-HT2A/2C/1A receptors downregulate (fewer expressed on cell surface). Presynaptic 5-HT1A autoreceptors desensitize (stop limiting serotonin release). (2) DRUG WITHDRAWAL: When SSRI is stopped → SERT resumes normal function → synaptic 5-HT drops to pre-treatment levels. BUT the adapted brain now has INSUFFICIENT receptor density to respond normally → relative serotonergic deficiency → symptoms. (3) SYMPTOM TIMELINE: Onset 2-4 days after discontinuation (or dose reduction), duration 1-3 weeks (usually self-limiting). SYMPTOMS (FINISH mnemonic): Flu-like symptoms, Insomnia, Nausea, Imbalance (dizziness), Sensory disturbances (brain zaps — paresthesias/electric shock sensations, possibly from sudden 5-HT changes affecting vestibular and sensory processing), Hyperarousal (anxiety, irritability, agitation). WHY PAROXETINE IS WORST: (1) HALF-LIFE: ~21 hours (contrast: fluoxetine ~72 hours + norfluoxetine ~14 days). Short half-life → rapid plasma level drop → sudden serotonin deficit. (2) POTENCY: Most potent SERT binding (Ki ~0.13 nM) → greatest degree of receptor adaptation. (3) ANTICHOLINERGIC: Paroxetine has significant M1 muscarinic antagonism → on withdrawal, CHOLINERGIC REBOUND occurs → adds insomnia, GI distress, diaphoresis to the serotonergic discontinuation symptoms. (4) NO ACTIVE METABOLITES: Fluoxetine's norfluoxetine (active, t½ 14 days) provides a built-in 'self-taper' → why fluoxetine rarely causes discontinuation syndrome. MANAGEMENT: (1) Slower taper (10-25% reduction every 2-4 weeks). (2) Switch to fluoxetine (long half-life) then taper fluoxetine. (3) Reassurance that symptoms are time-limited and NOT relapse.",
     explanationA: "While panic relapse can mimic some symptoms, the KEY differentiators are: 'brain zaps' (electric shock sensations) are PATHOGNOMONIC for discontinuation syndrome (never seen in panic disorder), flu-like symptoms, and symptom timing (onset 2-4 days after each dose reduction, NOT related to anxiety triggers).",
@@ -375,7 +375,7 @@ export const anxiolyticAntipsychoticQuestions = [
     stem: "A 19-year-old male with first-episode schizophrenia is started on long-acting injectable (LAI) paliperidone palmitate. What is the pharmacological rationale for LAI antipsychotics in early schizophrenia, and what is the specific pharmacokinetic transformation that paliperidone palmitate undergoes?",
     optionA: "LAI antipsychotics are identical to oral forms — they simply reduce pill count for convenience. Paliperidone palmitate is absorbed instantly upon injection",
     optionB: "LAI antipsychotics work better because intramuscular injection delivers the drug directly to the brain via spinal nerve roots, bypassing first-pass metabolism entirely",
-    optionC: "LAI antipsychotics address the CRITICAL problem of non-adherence in schizophrenia (70-80% of patients with first-episode psychosis become non-adherent within 1-2 years → relapse → progressive neurotoxicity from each psychotic episode). Paliperidone palmitate is an ESTER PRODRUG: the palmitate ester renders the molecule highly LIPOPHILIC → upon deep IM (deltoid or gluteal) injection, it forms a LOCAL DEPOT in muscle tissue → slow dissolution into surrounding tissue → ester hydrolysis by tissue esterases cleaves the palmitate moiety → releases active paliperidone (9-hydroxyrisperidone) → slow absorption into systemic circulation over weeks-months. This creates SUSTAINED, STABLE plasma levels — eliminating peak-trough fluctuations seen with oral dosing → consistent D2 occupancy, fewer EPS from peak levels, fewer breakthrough symptoms from trough levels",
+    optionC: "LAI antipsychotics address the CRITICAL problem of non-adherence in schizophrenia (70-80% of patients with first-episode psychosis become non-adherent within 1-2 years → relapse → progressive neurotoxicity from each psychotic episode).",
     optionD: "Paliperidone palmitate is an active drug (not a prodrug) that remains in the bloodstream as the palmitate ester; the ester form is what blocks D2 receptors",
     correctAnswer: "C",
     rationale: "LAI RATIONALE IN EARLY SCHIZOPHRENIA: Non-adherence is the SINGLE LARGEST modifiable risk factor for relapse. Each psychotic relapse is associated with: (1) Progressive gray matter loss (neurodegeneration from glutamate excitotoxicity during psychosis), (2) Treatment resistance (each episode reduces probability of remission), (3) Functional decline (cognitive, social, occupational). MIRROR-IMAGE studies show LAI vs oral: 50-60% reduction in hospitalization, fewer relapses, reduced mortality. Starting LAI EARLY (even in first episode) prevents the adherence-relapse-deterioration cycle. PALIPERIDONE PALMITATE PHARMACOKINETICS: (1) STRUCTURE: Paliperidone (active drug, 9-hydroxy-risperidone) is esterified with palmitic acid → paliperidone palmitate (highly lipophilic prodrug, essentially inactive). (2) INJECTION: Deep IM into deltoid (preferred for loading doses — faster absorption) or gluteal muscle. (3) DEPOT FORMATION: Lipophilic prodrug precipitates at the injection site → forms a microscopic SOLID DEPOT within muscle tissue. (4) SLOW DISSOLUTION: Over weeks, the solid prodrug slowly dissolves into interstitial fluid. (5) ESTER HYDROLYSIS: Tissue esterases cleave the palmitate ester → release free paliperidone (active). (6) ABSORPTION: Active paliperidone enters systemic circulation → primary renal elimination (59% unchanged — minimal CYP metabolism). Formulations: Monthly (PP1M), 3-monthly (PP3M — larger crystal depot), 6-monthly (PP6M). PLASMA LEVEL ADVANTAGES: (1) No peak-dose EPS spikes. (2) No trough-level breakthrough psychosis. (3) Guaranteed medication delivery (eliminates covert non-adherence). (4) Steady-state D2 occupancy in the 65-80% 'therapeutic window.'",
@@ -397,7 +397,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 45-year-old female with treatment-resistant depression (TRD) on escitalopram undergoes an IV ketamine infusion (0.5 mg/kg over 40 minutes) and experiences rapid antidepressant response within 4 hours. What is ketamine's mechanism of rapid antidepressant action, and how does it fundamentally differ from traditional monoaminergic antidepressants?",
     optionA: "Ketamine is a serotonin reuptake inhibitor with faster oral absorption than traditional SSRIs; the IV route simply delivers the SSRI mechanism faster",
-    optionB: "Ketamine is a non-competitive NMDA receptor antagonist that produces rapid antidepressant effects through a GLUTAMATERGIC mechanism fundamentally different from monoamine-based drugs. Mechanism: (1) Ketamine blocks NMDA receptors on GABA interneurons in the PFC → disinhibits glutamatergic pyramidal neurons → GLUTAMATE SURGE, (2) Glutamate activates AMPA receptors → BDNF release → TrkB receptor activation → mTORC1 signaling pathway activation, (3) mTORC1 → rapid synthesis of synaptic proteins (PSD-95, GluA1, synapsin) → SYNAPTOGENESIS within hours → restoration of synaptic connections lost during chronic depression. This synaptic plasticity mechanism explains: (a) rapid onset (hours vs weeks for SSRIs), (b) efficacy in treatment-resistant cases (targets a different system than monoamines), (c) transient duration (new synapses require maintenance → effects fade in days-weeks without repeated infusions)",
+    optionB: "Ketamine is a non-competitive NMDA receptor antagonist that produces rapid antidepressant effects through a GLUTAMATERGIC mechanism fundamentally different from monoamine-based drugs.",
     optionC: "Ketamine works as a potent opioid agonist — its antidepressant effect is simply euphoria from mu-receptor activation, identical to morphine",
     optionD: "Ketamine's antidepressant effect is from dissociative anesthesia — patients cannot feel depressed while dissociated. The antidepressant effect disappears when dissociation resolves",
     correctAnswer: "B",
@@ -432,7 +432,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Recognize multifactorial disease mechanisms in baseline clinical reasoning",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning improves when mechanisms are organized into clear interacting domains.",
     explanationC: ""
@@ -452,7 +452,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Apply mechanism and risk profiling to medication selection",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,adverse_effects",
     bennerBreakdown: "Advanced beginners transition from class memorization to mechanism-guided prescribing decisions.",
     explanationB: "",
@@ -473,7 +473,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use comprehensive reassessment to guide step-up decisions in complex care",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent practice relies on longitudinal, multidimensional reassessment before escalation.",
     explanationA: "",
@@ -498,7 +498,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -521,7 +521,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -544,7 +544,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -567,7 +567,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -590,7 +590,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -613,7 +613,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -636,7 +636,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -659,7 +659,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -682,7 +682,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -705,7 +705,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -728,7 +728,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -751,7 +751,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -774,7 +774,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -797,7 +797,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -820,7 +820,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -843,7 +843,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -866,7 +866,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -889,7 +889,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -912,7 +912,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -935,7 +935,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -958,7 +958,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -981,7 +981,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1004,7 +1004,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1027,7 +1027,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1050,7 +1050,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1073,7 +1073,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1096,7 +1096,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1119,7 +1119,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1142,7 +1142,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1165,7 +1165,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1188,7 +1188,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1211,7 +1211,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1234,7 +1234,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1257,7 +1257,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1280,7 +1280,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1303,7 +1303,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1326,7 +1326,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1349,7 +1349,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1372,7 +1372,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1395,7 +1395,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1418,7 +1418,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1441,7 +1441,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1464,7 +1464,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1487,7 +1487,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1510,7 +1510,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1533,7 +1533,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1556,7 +1556,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1579,7 +1579,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1602,7 +1602,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1625,7 +1625,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1648,7 +1648,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1671,7 +1671,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1694,7 +1694,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1717,7 +1717,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1740,7 +1740,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1763,7 +1763,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1786,7 +1786,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1809,7 +1809,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1832,7 +1832,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1855,7 +1855,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1878,7 +1878,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1901,7 +1901,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1924,7 +1924,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1947,7 +1947,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1970,7 +1970,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -1993,7 +1993,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2016,7 +2016,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2039,7 +2039,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2062,7 +2062,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2085,7 +2085,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2108,7 +2108,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2131,7 +2131,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2154,7 +2154,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2177,7 +2177,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2200,7 +2200,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2223,7 +2223,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2246,7 +2246,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2269,7 +2269,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2292,7 +2292,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2315,7 +2315,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2338,7 +2338,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2361,7 +2361,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2384,7 +2384,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2407,7 +2407,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2430,7 +2430,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2453,7 +2453,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2476,7 +2476,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2499,7 +2499,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2522,7 +2522,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2545,7 +2545,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2568,7 +2568,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor buspirone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2591,7 +2591,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor lorazepam",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2614,7 +2614,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor quetiapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2637,7 +2637,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor risperidone",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2660,7 +2660,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "advanced_beginner",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor aripiprazole",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Advanced_beginner reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2683,7 +2683,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "expert",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor clozapine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Expert reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2706,7 +2706,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor olanzapine",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "anxiolytics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2729,7 +2729,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "competent",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor haloperidol",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Competent reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2752,7 +2752,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "proficient",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor hydroxyzine",
     questionType: "advanced",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "moa,receptor_activity,adverse_effects,drug_interactions",
     bennerBreakdown: "Proficient reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2775,7 +2775,7 @@ export const anxiolyticAntipsychoticQuestions = [
     bennerStage: "novice",
     clinicalReasoningObj: "Use mechanism-focused reasoning to select and monitor propranolol (performance anxiety use)",
     questionType: "standard",
-    clinicalTopic: "neuro_pns_cns",
+    clinicalTopic: "antipsychotics",
     pharmacologyFocus: "",
     bennerBreakdown: "Novice reasoning should map pharmacologic target to expected benefit and adverse-effect surveillance."
   },
@@ -2786,7 +2786,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 30-year-old male with schizophrenia has persistent negative symptoms (avolition, social withdrawal, flat affect) despite adequate trials of risperidone and olanzapine. The NP switches to cariprazine. What is cariprazine's unique receptor profile that addresses negative symptoms, and how does it differ from aripiprazole?",
     optionA: "Cariprazine is a potent D2 full antagonist with no partial agonist activity; it treats negative symptoms by completely blocking dopamine in the mesocortical pathway",
-    optionB: "Cariprazine is a D3-PREFERRING PARTIAL AGONIST (D3/D2 partial agonist) — its HIGHEST affinity is for the D3 receptor, approximately 6-8 fold greater than its D2 affinity. D3 receptors are concentrated in the MESOLIMBIC and MESOCORTICAL areas (nucleus accumbens, ventral tegmental area, prefrontal cortex). In the mesocortical pathway, D3 partial agonism provides functional DOPAMINE ENHANCEMENT in the hypodopaminergic prefrontal cortex → improved motivation, emotional engagement, and cognitive flexibility (negative symptom domains). Compare ARIPIPRAZOLE: D2-preferring partial agonist with less D3 selectivity. Cariprazine's D3 preference is the proposed basis for its superior negative symptom data in head-to-head trials vs risperidone",
+    optionB: "Cariprazine is a D3-PREFERRING PARTIAL AGONIST (D3/D2 partial agonist) — its HIGHEST affinity is for the D3 receptor, approximately 6-8 fold greater than its D2 affinity.",
     optionC: "Cariprazine is a selective serotonin 5-HT2A antagonist with no dopamine activity; negative symptoms improve from serotonin modulation alone",
     optionD: "Cariprazine works identically to aripiprazole — both are D2 partial agonists with no clinically meaningful differences in receptor selectivity",
     correctAnswer: "B",
@@ -2809,7 +2809,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 78-year-old male with Parkinson's disease dementia develops persistent visual hallucinations (seeing people in his house). The neurologist prescribes pimavanserin (Nuplazid). What is pimavanserin's mechanism, and why is it preferred over other antipsychotics in Parkinson's disease psychosis?",
     optionA: "Pimavanserin is a standard D2 antagonist like haloperidol but with fewer EPS because of reduced blood-brain barrier penetration",
-    optionB: "Pimavanserin is a SELECTIVE 5-HT2A INVERSE AGONIST with additional 5-HT2C inverse agonist activity — it has NO significant DOPAMINE receptor affinity (no D2 binding). In Parkinson's disease, D2 blockade by conventional antipsychotics WORSENS motor symptoms (Parkinson's IS a dopamine-deficient disorder of the nigrostriatal pathway). Pimavanserin uniquely addresses psychosis through SEROTONERGIC modulation alone: 5-HT2A receptors in the cortex modulate visual processing and reality testing; inverse agonism reduces constitutive (baseline) 5-HT2A signaling and blocks serotonin-mediated activation → reduced hallucinations WITHOUT any dopaminergic motor deterioration",
+    optionB: "Pimavanserin is a SELECTIVE 5-HT2A INVERSE AGONIST with additional 5-HT2C inverse agonist activity — it has NO significant DOPAMINE receptor affinity (no D2 binding).",
     optionC: "Pimavanserin is a GABA-A agonist that reduces cortical hyperexcitability causing hallucinations; it avoids motor effects because GABA receptors are not involved in movement",
     optionD: "Pimavanserin is a selective muscarinic M1 agonist that improves cholinergic deficits underlying hallucinations; preferred because anticholinergic effects worsen PD cognition",
     correctAnswer: "B",
@@ -2832,7 +2832,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 40-year-old female with bipolar depression unresponsive to lithium and lamotrigine is started on lumateperone (Caplyta). The patient asks how this new medication works differently. What is lumateperone's unique triple mechanism?",
     optionA: "Lumateperone is a potent D2 full antagonist combined with SSRI activity and NMDA antagonism",
-    optionB: "Lumateperone has a SIMULTANEOUS TRIPLE MECHANISM at therapeutic doses: (1) D2 PARTIAL AGONISM with very high D2 receptor occupancy (~60% at 42mg) but uniquely low intrinsic activity → functions as a presynaptic partial agonist and postsynaptic antagonist with minimal EPS because of rapid D2 dissociation; (2) 5-HT2A ANTAGONISM (potent — primary antipsychotic and mood stabilizing mechanism); (3) SEROTONIN REUPTAKE INHIBITION (SERT blockade) at therapeutic doses → antidepressant effect. Additionally, lumateperone modulates GLUTAMATE transmission indirectly through D1 receptor-dependent phosphorylation of GluN2B subunits of NMDA receptors — enhancing NMDA function in cortical circuits. This quadruple mechanism (D2 modulation + 5-HT2A antagonism + SERT inhibition + glutamate modulation) is achieved at a SINGLE dose (42mg)",
+    optionB: "Lumateperone has a SIMULTANEOUS TRIPLE MECHANISM: D2 partial agonism (presynaptic preference, low EPS), 5-HT2A antagonism, and serotonin reuptake inhibition (SERT blockade) at a single 42mg dose",
     optionC: "Lumateperone is identical to quetiapine — a sedating antihistamine that also blocks D2 receptors; its 'novel mechanism' is marketing",
     optionD: "Lumateperone is a pure GABA-B agonist that stabilizes mood through inhibitory network enhancement",
     correctAnswer: "B",
@@ -2855,7 +2855,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 55-year-old male with chronic insomnia disorder is prescribed suvorexant (Belsomra) after failing cognitive behavioral therapy for insomnia (CBT-I) and sleep hygiene measures. What is suvorexant's mechanism, and how does it fundamentally differ from benzodiazepines and Z-drugs?",
     optionA: "Suvorexant enhances GABA-A inhibitory signaling identical to benzodiazepines but at a different binding site on the same receptor",
-    optionB: "Suvorexant is a DUAL OREXIN RECEPTOR ANTAGONIST (DORA) — it blocks BOTH OX1R and OX2R (orexin-A and orexin-B receptors) in the LATERAL HYPOTHALAMUS and arousal-promoting nuclei. Orexin neuropeptides (also called hypocretins) are produced by a small cluster of neurons in the lateral hypothalamus that PROJECT to multiple wake-promoting centers (locus coeruleus/NE, tuberomammillary nucleus/histamine, raphe nuclei/serotonin, basal forebrain/ACh). By blocking orexin signaling, suvorexant REDUCES WAKEFULNESS DRIVE rather than ENHANCING SEDATION — a fundamentally different approach. Unlike GABA-A modulators (benzodiazepines, Z-drugs) which artificially INCREASE inhibitory signaling, DORAs REMOVE the wake signal, allowing natural sleep architecture to emerge",
+    optionB: "Suvorexant is a DUAL OREXIN RECEPTOR ANTAGONIST (DORA) — it blocks BOTH OX1R and OX2R (orexin-A and orexin-B receptors) in the LATERAL HYPOTHALAMUS and arousal-promoting nuclei.",
     optionC: "Suvorexant is a melatonin receptor agonist that resets the circadian clock; it differs from benzodiazepines by targeting the suprachiasmatic nucleus",
     optionD: "Suvorexant blocks histamine H1 receptors causing sedation; it differs from benzodiazepines only in its side effect profile, not mechanism",
     correctAnswer: "B",
@@ -2878,7 +2878,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 62-year-old female with bipolar I disorder is started on valproate (divalproex sodium) for acute mania. What are valproate's MULTIPLE proposed mechanisms of action for mood stabilization, and what is the most concerning teratogenic risk?",
     optionA: "Valproate works exclusively through GABA-A receptor agonism identical to benzodiazepines; the main teratogenic risk is cleft palate",
-    optionB: "Valproate has MULTIPLE CONVERGENT mechanisms: (1) ENHANCES GABAergic inhibition — increases GABA synthesis (stimulates glutamic acid decarboxylase/GAD), inhibits GABA degradation (inhibits GABA-transaminase/GABA-T and succinic semialdehyde dehydrogenase), and may enhance postsynaptic GABA-A responses → net INCREASED inhibitory tone. (2) BLOCKS VOLTAGE-GATED SODIUM CHANNELS (use-dependent blockade like carbamazepine) → reduces repetitive neuronal firing in mania. (3) INHIBITS HISTONE DEACETYLASES (HDACs) → epigenetic modification promoting gene expression changes favoring neuroprotection. (4) Inhibits GSK-3β (similar to lithium). TERATOGENICITY: the most devastating risk is NEURAL TUBE DEFECTS (spina bifida, 1-2% risk vs 0.06% baseline) due to folate metabolism disruption and HDAC inhibition during neural tube closure (gestational days 17-28). FDA Pregnancy Category X for migraine prophylaxis",
+    optionB: "Valproate has MULTIPLE CONVERGENT mechanisms: (1) ENHANCES GABAergic inhibition — increases GABA synthesis (stimulates glutamic acid decarboxylase/GAD)",
     optionC: "Valproate blocks dopamine D2 receptors for antimanic effect; main teratogenic risk is cardiac defects",
     optionD: "Valproate is a selective sodium channel blocker; teratogenic risk is limb reduction defects",
     correctAnswer: "B",
@@ -2901,7 +2901,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 22-year-old female with new-onset insomnia and delayed sleep phase is prescribed ramelteon (Rozerem). She is concerned about addiction since her roommate became dependent on zolpidem. What is ramelteon's mechanism, and why does it have zero abuse potential?",
     optionA: "Ramelteon enhances GABA-A receptor activity at a non-benzodiazepine site like zolpidem; abuse potential is low but not zero",
-    optionB: "Ramelteon is a highly selective MELATONIN RECEPTOR AGONIST — it binds MT1 and MT2 receptors in the SUPRACHIASMATIC NUCLEUS (SCN) of the hypothalamus. MT1 activation promotes SLEEP ONSET by inhibiting the SCN's wake-promoting signals (reduces firing of SCN neurons that drive arousal). MT2 activation helps PHASE-SHIFT the circadian clock, useful in delayed sleep-wake phase disorder. Ramelteon has NO activity at GABA-A, dopamine, serotonin, opioid, or orexin receptors → NO sedation, NO euphoria, NO muscle relaxation, NO reward pathway activation → ZERO ABUSE POTENTIAL. It is the only prescription insomnia medication that is NOT a DEA-scheduled controlled substance",
+    optionB: "Ramelteon is a highly selective MELATONIN RECEPTOR AGONIST — it binds MT1 and MT2 receptors in the SUPRACHIASMATIC NUCLEUS (SCN) of the hypothalamus.",
     optionC: "Ramelteon is a dual orexin antagonist like suvorexant; it has lower abuse potential because orexin blockade doesn't cause euphoria",
     optionD: "Ramelteon blocks histamine H1 receptors for sedation; it has zero abuse potential because antihistamines are not addictive",
     correctAnswer: "B",
@@ -2923,7 +2923,7 @@ export const anxiolyticAntipsychoticQuestions = [
   },
   {
     stem: "A 19-year-old male presents to the ED with acute agitation and psychosis after methamphetamine use. The ED physician orders IM olanzapine for acute sedation. A nurse asks why a benzodiazepine was not chosen instead. What is olanzapine's acute sedation mechanism in this context, and what critical drug interaction must be avoided?",
-    optionA: "IM olanzapine (for acute agitation) produces rapid sedation through MULTI-RECEPTOR antagonism: H1 ANTAGONISM (primary sedation mechanism — potent antihistaminic effect), MUSCARINIC M1 ANTAGONISM (contributes to sedation and cognitive slowing), 5-HT2A ANTAGONISM (reduces cortical excitability and psychotic symptoms), and D2 ANTAGONISM (addresses psychosis-driven agitation). The CRITICAL interaction: IM olanzapine must NOT be given within 1 hour of IM BENZODIAZEPINES (and vice versa) — combined strong H1/muscarinic/GABA-A sedation causes SEVERE RESPIRATORY DEPRESSION, HYPOTENSION, AND EXCESSIVE SEDATION that has resulted in DEATHS. Oral combinations are used cautiously, but IM co-administration within 1 hour is contraindicated",
+    optionA: "IM olanzapine (for acute agitation) produces rapid sedation through MULTI-RECEPTOR antagonism: H1 ANTAGONISM (primary sedation mechanism",
     optionB: "IM olanzapine works through GABA-A potentiation identical to benzodiazepines; it is chosen because psychotic patients don't respond to GABA drugs",
     optionC: "IM olanzapine blocks only dopamine D2 receptors for antipsychotic effect; there is no interaction concern with benzodiazepines",
     optionD: "IM olanzapine is a selective alpha-1 blocker that causes sedation through hypotension; benzodiazepines are avoided because they potentiate hypotension",
@@ -2947,7 +2947,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 45-year-old male on clozapine 400mg/day for treatment-resistant schizophrenia has his absolute neutrophil count (ANC) return at 800/μL (severe neutropenia). Clozapine is immediately discontinued. What is the mechanism of clozapine-induced agranulocytosis/neutropenia, and what is the mandated monitoring protocol?",
     optionA: "Clozapine directly poisons neutrophil mitochondria through its tricyclic ring structure; monitoring requires monthly liver function tests",
-    optionB: "Clozapine-induced neutropenia is believed to result from BOTH IMMUNE-MEDIATED and DIRECT TOXIC mechanisms: (1) IMMUNE: clozapine is oxidized by myeloperoxidase in neutrophils to a REACTIVE NITRENIUM ION that haptenizes neutrophil proteins → neoantigen formation → antibody-mediated neutrophil destruction (Type II hypersensitivity). (2) DIRECT TOXICITY: the nitrenium ion also directly damages neutrophil precursors in the bone marrow by inducing APOPTOSIS through oxidative stress and mitochondrial dysfunction. Risk is highest in the FIRST 6 MONTHS (~85% of cases). MANDATED MONITORING (REMS — Clozapine REMS Program): ANC WEEKLY for 6 months, then BIWEEKLY for 6 months, then MONTHLY thereafter if ANC remains stable. ANC thresholds: ≥1500 (continue), 1000-1499 (mild — increase monitoring), 500-999 (moderate — hold clozapine), <500 (severe — discontinue, DO NOT rechallenge)",
+    optionB: "Clozapine-induced neutropenia is believed to result from BOTH IMMUNE-MEDIATED",
     optionC: "Clozapine blocks G-CSF receptors preventing neutrophil production; monitoring requires weekly platelet counts",
     optionD: "Clozapine-induced neutropenia is dose-dependent and always occurs at doses above 600mg; monitoring is only required during the first month",
     correctAnswer: "B",
@@ -2970,7 +2970,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 50-year-old female with generalized anxiety disorder has been on alprazolam 1mg TID for 3 years. She wants to discontinue it but is afraid of withdrawal. What is the mechanism of benzodiazepine physical dependence and withdrawal, and what is the recommended tapering approach?",
     optionA: "Benzodiazepine dependence is purely psychological from reward-seeking behavior; withdrawal can be managed by abrupt discontinuation with SSRI coverage",
-    optionB: "Chronic benzodiazepine use causes GABA-A RECEPTOR NEUROADAPTATION: (1) DOWNREGULATION — reduction in the NUMBER of GABA-A receptors (receptor internalization/endocytosis). (2) UNCOUPLING — decreased EFFICIENCY of benzodiazepine binding site coupling to the chloride channel (allosteric uncoupling). (3) SUBUNIT COMPOSITION CHANGES — shift from α1-containing (benzodiazepine-sensitive) to α4/α6-containing (benzodiazepine-INSENSITIVE) subunits. These changes mean the brain REQUIRES benzodiazepine occupancy to maintain BASELINE inhibitory tone. ABRUPT WITHDRAWAL: suddenly removing the benzodiazepine from an adapted system → GABA-A inhibition falls BELOW normal baseline → CNS hyperexcitability → withdrawal syndrome (anxiety rebound, insomnia, tremor, seizures, potentially fatal). TAPERING: convert to long-acting equivalent (diazepam), reduce by 10-25% every 1-2 weeks initially, then 5-10% reductions as dose decreases, total taper duration 8-12 weeks minimum for long-term users",
+    optionB: "Chronic benzodiazepine use causes GABA-A RECEPTOR NEUROADAPTATION: (1) DOWNREGULATION — reduction in the NUMBER of GABA-A receptors (receptor internalization/endocytosis). (2) UNCOUPLING",
     optionC: "Benzodiazepine dependence results from serotonin depletion caused by long-term GABA enhancement; withdrawal is managed by starting an SSRI simultaneously",
     optionD: "Benzodiazepine dependence is due to dopamine receptor upregulation in the reward pathway; withdrawal is identical to opioid withdrawal and managed with naloxone",
     correctAnswer: "B",
@@ -2993,7 +2993,7 @@ export const anxiolyticAntipsychoticQuestions = [
   {
     stem: "A 33-year-old female with schizoaffective disorder on olanzapine 20mg/day has gained 35 pounds in 6 months, with new fasting glucose of 142 mg/dL and triglycerides of 280 mg/dL. What is the receptor-level mechanism of olanzapine-induced metabolic syndrome?",
     optionA: "Olanzapine causes metabolic syndrome through D2 blockade in the hypothalamic appetite center, with weight gain proportional to D2 occupancy",
-    optionB: "Olanzapine-induced metabolic syndrome results from MULTI-RECEPTOR metabolic disruption: (1) HISTAMINE H1 ANTAGONISM in the hypothalamus → stimulates AMP-activated protein kinase (AMPK) in the arcuate nucleus → increases orexigenic (appetite-stimulating) neuropeptide Y (NPY) and agouti-related peptide (AgRP) → increased caloric intake. (2) 5-HT2C ANTAGONISM → 5-HT2C receptors normally mediate SATIETY through POMC/CART neuron activation; blocking them removes satiety signaling → overeating. (3) MUSCARINIC M3 ANTAGONISM on pancreatic beta cells → impairs INSULIN SECRETION directly → dysglycemia independent of weight gain. (4) DIRECT effects on adipocytes: olanzapine activates SREBP (sterol regulatory element-binding proteins) → increased lipogenesis → hypertriglyceridemia and visceral adiposity",
+    optionB: "Multi-receptor disruption: H1 antagonism increases appetite via hypothalamic AMPK, 5-HT2C blockade removes satiety signaling, M3 antagonism impairs beta-cell insulin secretion, and SREBP activation drives lipogenesis",
     optionC: "Olanzapine causes weight gain only through sedation-induced reduced physical activity; metabolic changes are entirely secondary to weight",
     optionD: "Olanzapine disrupts thyroid function, causing hypothyroidism-mediated weight gain and metabolic syndrome",
     correctAnswer: "B",

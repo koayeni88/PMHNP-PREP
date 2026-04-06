@@ -44,7 +44,7 @@ model Question {
   bennerStage            String   // novice, advanced_beginner, competent, proficient, expert
   clinicalReasoningObj   String   @default("")
   questionType           String   @default("standard") // standard | advanced
-  clinicalTopic          String   @default("")
+  clinicalTopic          String   @default("general")
   pharmacologyFocus      String   @default("")
   bennerBreakdown        String   @default("")
   isActive               Boolean  @default(true)

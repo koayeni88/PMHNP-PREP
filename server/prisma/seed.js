@@ -1217,7 +1217,10 @@ const questions = allQuestions.filter(q => {
   if (seen.has(q.stem)) return false;
   seen.add(q.stem);
   return true;
-});
+}).map(q => ({
+  ...q,
+  clinicalTopic: q.clinicalTopic || 'general'
+}));
 console.log(`${allQuestions.length} total → ${questions.length} unique (${allQuestions.length - questions.length} duplicates removed)`);
 
 async function main() {

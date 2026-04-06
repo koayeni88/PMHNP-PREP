@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { api } from '../utils/api.js';
-import { getBennerBadgeClass, getBennerLabel, getClinicalTopicLabel, BODY_SYSTEMS, getBodySystemForTopic } from '../utils/constants.js';
+import { getBennerBadgeClass, getBennerLabel, getClinicalTopicLabel, CLINICAL_TOPICS, BODY_SYSTEMS, getBodySystemForTopic } from '../utils/constants.js';
 
 export default function QuestionBank() {
   const [questions, setQuestions] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', clinicalTopic: '', bodySystem: '' });
+  const [filters, setFilters] = useState({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '' });
+  const [selectedClinicalTopics, setSelectedClinicalTopics] = useState([]);
   const [expanded, setExpanded] = useState(null);
   const [filterOptions, setFilterOptions] = useState(null);
+  const [showAllTopics, setShowAllTopics] = useState(false);
 
   useEffect(() => {
     api.getFilters().then(setFilterOptions).catch(console.error);
@@ -24,9 +26,14 @@ export default function QuestionBank() {
     if (filters.questionType) params.questionType = filters.questionType;
     if (filters.bodySystem) {
       const system = BODY_SYSTEMS.find(s => s.key === filters.bodySystem);
-      if (system) params.clinicalTopic = system.clinicalTopics.join(',');
-    } else if (filters.clinicalTopic) {
-      params.clinicalTopic = filters.clinicalTopic;
+      if (system) {
+        // Combine body system topics with directly selected topics
+        const combined = new Set(system.clinicalTopics);
+        selectedClinicalTopics.forEach(t => combined.add(t));
+        params.clinicalTopic = [...combined].join(',');
+      }
+    } else if (selectedClinicalTopics.length > 0) {
+      params.clinicalTopic = selectedClinicalTopics.join(',');
     }
     if (filters.search) params.search = filters.search;
 
@@ -34,7 +41,7 @@ export default function QuestionBank() {
       .then((data) => { setQuestions(data.questions); setTotal(data.total); })
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [page, filters]);
+  }, [page, filters, selectedClinicalTopics]);
 
   const handleBookmark = async (questionId) => {
     await api.toggleBookmark(questionId);
@@ -100,21 +107,54 @@ export default function QuestionBank() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <select className="input-field" value={filters.questionType}
-            onChange={(e) => { setFilters(f => ({ ...f, questionType: e.target.value, ...(e.target.value !== 'advanced' ? { clinicalTopic: '' } : {}) })); setPage(1); }}>
+            onChange={(e) => { setFilters(f => ({ ...f, questionType: e.target.value })); setPage(1); }}>
             <option value="">All Types</option>
             {filterOptions?.questionTypes?.map(t => <option key={t} value={t}>{t === 'advanced' ? '🔬 Advanced' : 'Standard'}</option>)}
           </select>
-          {filters.questionType === 'advanced' && filterOptions?.clinicalTopics?.length > 0 && (
-            <select className="input-field" value={filters.clinicalTopic}
-              onChange={(e) => { setFilters(f => ({ ...f, clinicalTopic: e.target.value })); setPage(1); }}>
-              <option value="">All Clinical Topics</option>
-              {filterOptions.clinicalTopics.map(t => <option key={t} value={t}>{getClinicalTopicLabel(t)}</option>)}
-            </select>
-          )}
-          <button onClick={() => { setFilters({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', clinicalTopic: '', bodySystem: '' }); setPage(1); }}
+          <button onClick={() => { setFilters({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '' }); setSelectedClinicalTopics([]); setPage(1); }}
             className="btn-secondary text-sm">
             Clear Filters
           </button>
+        </div>
+      </div>
+
+      {/* Clinical Topics — multi-select */}
+      <div className="card mb-6">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Clinical Topics {selectedClinicalTopics.length > 0 && <span className="text-primary-600">({selectedClinicalTopics.length} selected)</span>}
+          </h3>
+          <div className="flex items-center gap-3">
+            {selectedClinicalTopics.length > 0 && (
+              <button onClick={() => { setSelectedClinicalTopics([]); setPage(1); }} className="text-xs text-primary-600 hover:text-primary-700 font-medium">
+                Clear Topics
+              </button>
+            )}
+            <button onClick={() => setShowAllTopics(prev => !prev)} className="text-xs text-gray-500 hover:text-gray-700 font-medium">
+              {showAllTopics ? 'Show Less' : 'Show All'}
+            </button>
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {(showAllTopics ? CLINICAL_TOPICS : CLINICAL_TOPICS.slice(0, 12)).map((t) => {
+            const isSelected = selectedClinicalTopics.includes(t.key);
+            return (
+              <button key={t.key}
+                onClick={() => {
+                  setSelectedClinicalTopics(prev =>
+                    prev.includes(t.key) ? prev.filter(k => k !== t.key) : [...prev, t.key]
+                  );
+                  setPage(1);
+                }}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  isSelected
+                    ? 'bg-primary-600 text-white shadow-sm'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}>
+                {t.icon} {t.label} {isSelected && '✓'}
+              </button>
+            );
+          })}
         </div>
       </div>
 

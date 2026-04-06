@@ -21,6 +21,7 @@ export const api = {
   getQuestions: (params) => request(`/questions?${new URLSearchParams(params)}`),
   getQuestion: (id) => request(`/questions/${id}`),
   getFilters: () => request('/questions/meta/filters'),
+  getFacets: (params) => request(`/questions/meta/facets?${new URLSearchParams(params)}`),
 
   // Quiz
   createQuiz: (data) => request('/quiz/create', { method: 'POST', body: JSON.stringify(data) }),

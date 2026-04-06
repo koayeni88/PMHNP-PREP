@@ -19,6 +19,7 @@ export const QUESTION_TYPES = [
 ];
 
 export const CLINICAL_TOPICS = [
+  { key: 'general', label: 'General', icon: '📚' },
   { key: 'mood_disorders', label: 'Mood Disorders', icon: '🌊' },
   { key: 'anxiety_disorders', label: 'Anxiety Disorders', icon: '😰' },
   { key: 'psychotic_disorders', label: 'Psychotic Disorders', icon: '🔮' },

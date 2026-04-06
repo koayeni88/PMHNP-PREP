@@ -65,6 +65,44 @@ router.get('/:id', authenticate, async (req, res) => {
   }
 });
 
+// Get faceted filter counts (for quiz builder cascading filters)
+router.get('/meta/facets', authenticate, async (req, res) => {
+  try {
+    const { category, bennerStage, questionType, clinicalTopic } = req.query;
+
+    function buildWhere(exclude) {
+      const w = { isActive: true };
+      if (category && exclude !== 'category') w.category = category;
+      if (bennerStage && exclude !== 'bennerStage') w.bennerStage = bennerStage;
+      if (questionType && exclude !== 'questionType') w.questionType = questionType;
+      if (clinicalTopic && exclude !== 'clinicalTopic') {
+        const topics = clinicalTopic.split(',').map(t => t.trim()).filter(Boolean);
+        if (topics.length > 0) w.clinicalTopic = topics.length > 1 ? { in: topics } : topics[0];
+      }
+      return w;
+    }
+
+    const [total, cats, stages, types, topics] = await Promise.all([
+      prisma.question.count({ where: buildWhere() }),
+      prisma.question.groupBy({ by: ['category'], where: buildWhere('category'), _count: true }),
+      prisma.question.groupBy({ by: ['bennerStage'], where: buildWhere('bennerStage'), _count: true }),
+      prisma.question.groupBy({ by: ['questionType'], where: buildWhere('questionType'), _count: true }),
+      prisma.question.groupBy({ by: ['clinicalTopic'], where: buildWhere('clinicalTopic'), _count: true })
+    ]);
+
+    res.json({
+      total,
+      categories: Object.fromEntries(cats.map(c => [c.category, c._count])),
+      bennerStages: Object.fromEntries(stages.map(s => [s.bennerStage, s._count])),
+      questionTypes: Object.fromEntries(types.map(t => [t.questionType, t._count])),
+      clinicalTopics: Object.fromEntries(topics.map(t => [t.clinicalTopic, t._count]))
+    });
+  } catch (error) {
+    console.error('Facets error:', error);
+    res.status(500).json({ error: 'Failed to fetch filter counts' });
+  }
+});
+
 // Get available filters
 router.get('/meta/filters', authenticate, async (req, res) => {
   try {
@@ -74,7 +112,7 @@ router.get('/meta/filters', authenticate, async (req, res) => {
       prisma.question.findMany({ distinct: ['subtopic'], select: { subtopic: true }, where: { isActive: true } }),
       prisma.question.findMany({ distinct: ['difficulty'], select: { difficulty: true }, where: { isActive: true } }),
       prisma.question.findMany({ distinct: ['questionType'], select: { questionType: true }, where: { isActive: true } }),
-      prisma.question.findMany({ distinct: ['clinicalTopic'], select: { clinicalTopic: true }, where: { isActive: true, clinicalTopic: { not: '' } } })
+      prisma.question.findMany({ distinct: ['clinicalTopic'], select: { clinicalTopic: true }, where: { isActive: true } })
     ]);
     res.json({
       categories: categories.map(c => c.category),
