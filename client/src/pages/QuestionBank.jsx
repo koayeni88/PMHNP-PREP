@@ -7,14 +7,16 @@ export default function QuestionBank() {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '' });
+  const [filters, setFilters] = useState({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '', answerStatus: '' });
   const [selectedClinicalTopics, setSelectedClinicalTopics] = useState([]);
   const [expanded, setExpanded] = useState(null);
   const [filterOptions, setFilterOptions] = useState(null);
   const [showAllTopics, setShowAllTopics] = useState(false);
+  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
 
   useEffect(() => {
     api.getFilters().then(setFilterOptions).catch(console.error);
+    api.getBookmarks().then(bms => setBookmarkedIds(new Set(bms.map(b => b.question.id)))).catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function QuestionBank() {
       params.clinicalTopic = selectedClinicalTopics.join(',');
     }
     if (filters.search) params.search = filters.search;
+    if (filters.answerStatus) params.answerStatus = filters.answerStatus;
 
     api.getQuestions(params)
       .then((data) => { setQuestions(data.questions); setTotal(data.total); })
@@ -45,6 +48,12 @@ export default function QuestionBank() {
 
   const handleBookmark = async (questionId) => {
     await api.toggleBookmark(questionId);
+    setBookmarkedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(questionId)) next.delete(questionId);
+      else next.add(questionId);
+      return next;
+    });
   };
 
   return (
@@ -81,6 +90,29 @@ export default function QuestionBank() {
         </div>
       </div>
 
+      {/* Answer Status Filter */}
+      <div className="card mb-4">
+        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Filter by Answer Status</h3>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { key: '', label: 'All Questions', icon: '📋' },
+            { key: 'answered', label: 'Answered Correctly', icon: '✅' },
+            { key: 'failed', label: 'Answered Incorrectly', icon: '❌' },
+            { key: 'unattempted', label: 'Not Attempted', icon: '⬜' },
+          ].map((opt) => (
+            <button key={opt.key}
+              onClick={() => { setFilters(f => ({ ...f, answerStatus: opt.key })); setPage(1); }}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                filters.answerStatus === opt.key
+                  ? 'bg-primary-600 text-white shadow-sm'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+              }`}>
+              {opt.icon} {opt.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Filters */}
       <div className="card mb-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
@@ -111,7 +143,7 @@ export default function QuestionBank() {
             <option value="">All Types</option>
             {filterOptions?.questionTypes?.map(t => <option key={t} value={t}>{t === 'advanced' ? '🔬 Advanced' : 'Standard'}</option>)}
           </select>
-          <button onClick={() => { setFilters({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '' }); setSelectedClinicalTopics([]); setPage(1); }}
+          <button onClick={() => { setFilters({ category: '', bennerStage: '', difficulty: '', search: '', questionType: '', bodySystem: '', answerStatus: '' }); setSelectedClinicalTopics([]); setPage(1); }}
             className="btn-secondary text-sm">
             Clear Filters
           </button>
@@ -194,8 +226,8 @@ export default function QuestionBank() {
                   {expanded === q.id ? 'Hide Details' : 'Show Answer & Rationale'}
                 </button>
                 <button onClick={() => handleBookmark(q.id)}
-                  className="text-sm text-gray-400 hover:text-yellow-500 transition-colors">
-                  🔖 Bookmark
+                  className={`text-sm transition-colors ${bookmarkedIds.has(q.id) ? 'text-yellow-500' : 'text-gray-400 hover:text-yellow-500'}`}>
+                  {bookmarkedIds.has(q.id) ? '🔖 Bookmarked' : '🔖 Bookmark'}
                 </button>
               </div>
 

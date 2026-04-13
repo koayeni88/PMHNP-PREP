@@ -114,7 +114,7 @@ router.get('/active', authenticate, async (req, res) => {
     const recentAnswers = await prisma.quizAnswer.findMany({
       where: { attempt: { userId: req.user.id, completed: true } },
       include: { question: { select: { clinicalTopic: true, category: true } } },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { attempt: { completedAt: 'desc' } },
       take: 200,
     });
 

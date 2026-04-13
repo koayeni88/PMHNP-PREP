@@ -15,6 +15,7 @@ export default function QuizBuilder() {
   const [selectedBodySystems, setSelectedBodySystems] = useState([]);
   const [selectedClinicalTopics, setSelectedClinicalTopics] = useState([]);
   const [questionCount, setQuestionCount] = useState(isExam ? 150 : 20);
+  const [questionSource, setQuestionSource] = useState('');
   const [timed, setTimed] = useState(isExam);
   const [timeLimit, setTimeLimit] = useState(isExam ? 210 : 30); // minutes
   const [loading, setLoading] = useState(false);
@@ -92,7 +93,8 @@ export default function QuizBuilder() {
         questionType: questionType || undefined,
         clinicalTopic: topicsList.length > 0 ? topicsList.join(',') : undefined,
         questionCount: parseInt(questionCount),
-        timeLimit: timed ? timeLimit * 60 : undefined
+        timeLimit: timed ? timeLimit * 60 : undefined,
+        questionSource: questionSource || undefined
       });
       navigate(`/quiz/${data.attemptId}?quizId=${data.quizId}`);
     } catch (err) {
@@ -294,6 +296,30 @@ export default function QuizBuilder() {
                     </button>
                   );
                 })}
+              </div>
+            </div>
+
+            {/* Question Source */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Question Source</label>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { key: '', label: 'All Questions', icon: '📋', desc: 'Any question' },
+                  { key: 'failed_only', label: 'Failed Only', icon: '❌', desc: 'Previously incorrect' },
+                  { key: 'exclude_passed', label: 'Exclude Passed', icon: '🔄', desc: 'Failed + new only' },
+                  { key: 'unattempted_only', label: 'New Only', icon: '⬜', desc: 'Never attempted' },
+                ].map((opt) => (
+                  <button key={opt.key} onClick={() => setQuestionSource(opt.key)}
+                    className={`p-3 rounded-xl border-2 text-center transition-all text-sm ${
+                      questionSource === opt.key
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                    }`}>
+                    <div className="text-lg">{opt.icon}</div>
+                    <p className="font-semibold text-xs mt-1">{opt.label}</p>
+                    <p className="text-[10px] text-gray-500 mt-0.5">{opt.desc}</p>
+                  </button>
+                ))}
               </div>
             </div>
 

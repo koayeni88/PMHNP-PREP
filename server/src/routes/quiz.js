@@ -7,7 +7,7 @@ const router = Router();
 // Create a quiz (custom or exam)
 router.post('/create', authenticate, async (req, res) => {
   try {
-    const { mode = 'practice', category, bennerStage, questionCount = 20, timeLimit, questionType, clinicalTopic } = req.body;
+    const { mode = 'practice', category, bennerStage, questionCount = 20, timeLimit, questionType, clinicalTopic, questionSource } = req.body;
 
     const where = { isActive: true };
     if (category) where.category = category;
@@ -16,6 +16,31 @@ router.post('/create', authenticate, async (req, res) => {
     if (clinicalTopic) {
       const topics = clinicalTopic.split(',').map(t => t.trim()).filter(Boolean);
       where.clinicalTopic = topics.length > 1 ? { in: topics } : topics[0];
+    }
+
+    // Filter by question source (answer history)
+    if (questionSource && ['failed_only', 'unattempted_only', 'exclude_passed'].includes(questionSource)) {
+      const userAnswers = await prisma.quizAnswer.findMany({
+        where: { attempt: { userId: req.user.id } },
+        select: { questionId: true, isCorrect: true },
+      });
+
+      const correctIds = new Set();
+      const incorrectIds = new Set();
+      userAnswers.forEach((a) => {
+        if (a.isCorrect) correctIds.add(a.questionId);
+        else incorrectIds.add(a.questionId);
+      });
+      const allAttemptedIds = [...new Set([...correctIds, ...incorrectIds])];
+
+      if (questionSource === 'failed_only') {
+        where.id = { in: [...incorrectIds] };
+      } else if (questionSource === 'unattempted_only') {
+        if (allAttemptedIds.length > 0) where.id = { notIn: allAttemptedIds };
+      } else if (questionSource === 'exclude_passed') {
+        // Include failed + unattempted (exclude only correctly answered)
+        if (correctIds.size > 0) where.id = { notIn: [...correctIds] };
+      }
     }
 
     // Fetch random questions

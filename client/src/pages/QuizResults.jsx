@@ -8,6 +8,21 @@ export default function QuizResults() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showDetails, setShowDetails] = useState(false);
+  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
+
+  const handleBookmark = async (questionId) => {
+    try {
+      await api.toggleBookmark(questionId);
+      setBookmarkedIds(prev => {
+        const next = new Set(prev);
+        if (next.has(questionId)) next.delete(questionId);
+        else next.add(questionId);
+        return next;
+      });
+    } catch (err) {
+      console.error('Bookmark error:', err);
+    }
+  };
 
   useEffect(() => {
     api.getResults(attemptId).then(setData).catch(console.error).finally(() => setLoading(false));
@@ -136,9 +151,15 @@ export default function QuizResults() {
                 {a.flagged && <span className="text-yellow-500">🚩</span>}
               </div>
               <p className="text-sm text-gray-800 dark:text-gray-200 mb-2">{a.question.stem}</p>
-              <div className="text-xs text-gray-500">
-                Your answer: <strong>{a.selectedAnswer || 'Skipped'}</strong> · 
-                Correct: <strong>{a.question.correctAnswer}</strong>
+              <div className="flex items-center justify-between">
+                <div className="text-xs text-gray-500">
+                  Your answer: <strong>{a.selectedAnswer || 'Skipped'}</strong> · 
+                  Correct: <strong>{a.question.correctAnswer}</strong>
+                </div>
+                <button onClick={() => handleBookmark(a.question.id)}
+                  className={`text-sm transition-colors ${bookmarkedIds.has(a.question.id) ? 'text-yellow-500' : 'text-gray-400 hover:text-yellow-500'}`}>
+                  {bookmarkedIds.has(a.question.id) ? '🔖 Bookmarked' : '🔖 Bookmark'}
+                </button>
               </div>
               <div className="mt-2 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg text-sm text-gray-600 dark:text-gray-400">
                 {a.question.rationale}

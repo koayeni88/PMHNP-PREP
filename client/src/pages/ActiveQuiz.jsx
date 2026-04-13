@@ -15,6 +15,7 @@ export default function ActiveQuiz() {
   const [answers, setAnswers] = useState({});
   const [revealed, setRevealed] = useState({});
   const [flagged, setFlagged] = useState(new Set());
+  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
   const [timeLeft, setTimeLeft] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -68,6 +69,20 @@ export default function ActiveQuiz() {
       else next.add(currentQ.id);
       return next;
     });
+  };
+
+  const handleBookmark = async () => {
+    try {
+      await api.toggleBookmark(currentQ.id);
+      setBookmarkedIds(prev => {
+        const next = new Set(prev);
+        if (next.has(currentQ.id)) next.delete(currentQ.id);
+        else next.add(currentQ.id);
+        return next;
+      });
+    } catch (err) {
+      console.error('Bookmark error:', err);
+    }
   };
 
   const handleFinish = async () => {
@@ -273,6 +288,12 @@ export default function ActiveQuiz() {
                   flagged.has(currentQ.id) ? 'bg-yellow-100 text-yellow-700' : 'bg-gray-100 text-gray-500'
                 }`}>
                 {flagged.has(currentQ.id) ? '🚩 Flagged' : '🏳️ Flag'}
+              </button>
+              <button onClick={handleBookmark}
+                className={`px-3 py-2 rounded-lg text-sm transition-all ${
+                  bookmarkedIds.has(currentQ.id) ? 'bg-yellow-100 text-yellow-700' : 'bg-gray-100 text-gray-500'
+                }`}>
+                {bookmarkedIds.has(currentQ.id) ? '🔖 Bookmarked' : '🔖 Bookmark'}
               </button>
             </div>
             {currentIndex < questions.length - 1 ? (

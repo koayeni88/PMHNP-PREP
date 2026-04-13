@@ -7,7 +7,7 @@ const router = Router();
 // Get questions with filters
 router.get('/', authenticate, async (req, res) => {
   try {
-    const { category, bennerStage, subtopic, difficulty, search, questionType, clinicalTopic, page = 1, limit = 20 } = req.query;
+    const { category, bennerStage, subtopic, difficulty, search, questionType, clinicalTopic, answerStatus, page = 1, limit = 20 } = req.query;
     const where = { isActive: true };
 
     if (category) where.category = category;
@@ -25,6 +25,37 @@ router.get('/', authenticate, async (req, res) => {
         { subtopic: { contains: search } },
         { examTip: { contains: search } }
       ];
+    }
+
+    // Filter by answer status: answered (correct), failed (incorrect), unattempted
+    if (answerStatus && ['answered', 'failed', 'unattempted'].includes(answerStatus)) {
+      const userAnswers = await prisma.quizAnswer.findMany({
+        where: { attempt: { userId: req.user.id } },
+        select: { questionId: true, isCorrect: true },
+      });
+
+      // Build maps of question IDs by status
+      const correctIds = new Set();
+      const incorrectIds = new Set();
+      userAnswers.forEach((a) => {
+        if (a.isCorrect) {
+          correctIds.add(a.questionId);
+        } else {
+          incorrectIds.add(a.questionId);
+        }
+      });
+
+      const allAttemptedIds = [...new Set([...correctIds, ...incorrectIds])];
+
+      if (answerStatus === 'answered') {
+        where.id = { in: [...correctIds] };
+      } else if (answerStatus === 'failed') {
+        where.id = { in: [...incorrectIds] };
+      } else if (answerStatus === 'unattempted') {
+        if (allAttemptedIds.length > 0) {
+          where.id = { notIn: allAttemptedIds };
+        }
+      }
     }
 
     const skip = (parseInt(page) - 1) * parseInt(limit);
